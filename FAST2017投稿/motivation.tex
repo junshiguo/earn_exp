@@ -1,0 +1,43 @@
+\section{Motivation}\label{sec:Motiv}
+
+Big data application characteristics Write-Once-Read-Many~(WORM), file scan, all blocks of a file possess almost the same recency and frequency property. This is unlike Web applications or traditional OLTP database applications, where various ranges or blocks of the same dataset may possess far different recency and frequency property.
+
+Unlike traditional operating-system-level or database-level data caching, where caching is executed on small data units (i.e. 8KB-sized pages), big data caching are executed on big data units(i.e. 256MB-sized blocks), so the cost of caching in/out a data unit for big data far exceeds that for traditional data caching. For example, caching in an 8KB-sized page may take milliseconds, while caching in a 256MB-sized block may take seconds. Besides, traditional operating-system-level or database-level data caching may have millions of slots for caching data units, and this makes hotter data units less likely cached out by colder data units; big data caching may only have thousands of slots for caching data units, and thus hotter data units have much higher likelihood of being cached out by colder data units.
+
+When memory cache resources of a big data cluster are shared by multiple computing frames, applications or end users, multiple cache resource demands may be concurrently generated from various computing frames, applications or end users. These concurrent resource demands could leads to serious cache resource conflicts on a non-big cluster with relatively limited cache capacity, compared to the aggregate of concurrent resources demands. Competition for computational resources does not have obviously decrease computation efficiency, while competition for cache resources may obviously decrease cache efficiency, because of data caching in/out cost. If cache resource conflicts occur temporarily, cache efficiency would only be influenced for the time being; while if the resource conflicts endure, cache thrashings would be incurred continuously because of massive and frequent cache block replacements, and the cache efficiency would deteriorate ceaselessly, making the whole cluster gain few benefits from data caching. This is the reason why we need to revisit existing caching mechanisms and strategies, and propose more effective measures to improve the efficiency of data caching on non-big clusters.
+
+Let's take the following example to illustrate the problem of cache resource competition on non-big clusters shared by multiple users. Assume: we have a cluster consisting of 20 nodes; each node could spare 50GB DRAM memory resources for data caching, which means the cluster possesses a 1000GB cache capacity; the cluster is concurrently shared by 8 end users, each of which needs 200GB cache resources for real-time analytical data processing, and all data are uniformly dispersed across the whole cluster; all analytical jobs submitted by different users are run one by one. We illustrate the cache efficiency of various workload constitutions achieved with different caching strategies in Tab.~\ref{Tab:example1}, where $J_{i}$ denotes the analytical job of $User_{i}$, caching strategy denotes the resource allocation strategy and corresponding replacement policy, and the cache efficiency is defined as:
+\begin{equation}
+cache\_efficiency = \frac{Volume of Data Obtained in Cache}{Total Volume of Data Accessed}
+\end{equation}
+
+\begin{table}[!htb]
+\caption{Cache efficiency of various workloads with different caching strategies.}
+\label{Tab:example1}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Workload & Caching Strategy & Efficiency\\
+\hline
+\multirow{3}{*}{{\shortstack{J1,J2,J3,J4,J5,J6,J7,J8 \\ \ldots \ldots}}} & On-Demand/LRU & 0\% \\
+\cline{2-3}
+&On-Demand/LFU & 0\% \\
+\cline{2-3}
+& Fair Share & 0\% \\
+\hline
+\multirow{3}{*}{{\shortstack{J1,J2,J3,J4,J5,J6,J7,J8\\ \ldots \ldots}}} & On-Demand/LRU & 0\% \\
+\cline{2-3}
+&On-Demand/LFU & 0\% \\
+\cline{2-3}
+& Fair Share & 0\% \\
+\hline
+\multirow{3}{*}{{\shortstack{J1,J2,J3,J4,J5,J6,J7,J8\\ \ldots \ldots}}} & On-Demand/LRU & 0\% \\
+\cline{2-3}
+&On-Demand/LFU & 0\% \\
+\cline{2-3}
+& Fair Share & 0\% \\
+\hline
+\end{tabular}
+\end{table}
+
+

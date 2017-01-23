@@ -1,0 +1,63 @@
+\section{Related Work}\label{sec:RelatedWork}
+
+Effective management of shared resources is crucial for the efficient running of computer systems, and there have been extensive research efforts devoted to resource management for various targeted scenarios. For example, Mantri is proposed for reining task outliers in MapReduce clusters to detect and act on task outliers early so as to improve job completion time; the fragment fencing technique is proposed to dynamically tuning memory buffer resource allocation for multi-class workloads with per-class response time goals so as to improve memory allocation and page replacement mechanisms to avoid making decisions that may jeopardize performance goals.
+
+Memory local tasks contact the local PACMan client to check if its input data is present. If not, they fetch it fromthe distributed file system (DFS). If the task reads data from the DFS, it puts it in cache of the local PACMan client and the client updates the coordinator about the newly cached block. Data .ow is designed to be local in PACMan as remotememory access could be constrained by the network.
+
+
+DRF
+
+CPU
+Memory
+Disk
+Network
+
+sharing in
+For distributed clusters
+
+big data clusters.
+
+Managing Memory to Meet Multi-class Workload Response Time Goals
+
+There has been a humbling amount of work on in-memory storage and caches.
+
+While our work borrows and builds up on ideas from prior work, the key differences arise from dealing with parallel jobs that led to a coordinated system that improved job completion time and cluster efficiency, as opposed to hit-ratio.
+
+RAMCloud and prior work on databases such as MMDB [..] propose storing all data in RAM.While this is suited for web servers, it is unlikely to work in data-intensive clusters due to capacity reasons ¨C Facebook has more storage on disk than aggregate memory. Our work thus treats memory as a constrained cache.
+
+Global memory systems such as the GMS project NOW project and others use the memory of a remote machine instead of spilling to disk. Based on the vast di.erence between local memory and network throughputs, PACMan¡¯smemory caches only serves tasks on the local node. However, nothing in the design precludes adding a global memory view. Crucially, PACMan considers job access patterns for replacement.
+
+Web caches have identi.ed the difference between byte hit-ratios and request hit-ratios, i.e., the value of having an entire .le cached to satisfy a request. Request hit-ratios are best optimized by retaining small .les [¨®.], a notion we borrow. We build up on it by addressing the added challenges in data-intensive clusters.
+
+
+Our distributed setting, unlike web caches, necessitate coordinated replacement. Also, we identify benefits for partial cache hits, e.g., large jobs that bene.t with partial memory locality. This leads to more careful replacement like evicting parts of an incomplete file. The analogy with web caches would not be a web request but a web page collection of multiple web objects (.gif, .html). Web caches, to the best of our knowledge, have not considered cache replacement to optimize at that level.
+
+LIFE¡¯s policy is analogous to servicing small requests in queuing systems, e.g., web servers. In particular, when the workload is heavy-tailed, giving preference to small requests hardly hurts the big requests.
+
+Distributed file systems such as Zebra and xFS developed for the Sprite operating system make use of client-side in-memory block caching, also suggesting using the cache only for small files. However, these systems make use of relatively simple eviction policies and do not coordinate scheduling with locality since they were designed for usage by a network of workstations. Cluster computing frameworks such as Piccolo and Spark are optimized for iterative machine learning workloads. They cache data in memory a.er the iteration, speeding up further iterations. The key difference with PACMan is that since we assume no application semantics, our cache can benefit multiple and a greater variety of jobs. We operate at the storage level and can serve as a substrate for such frameworks to build upon.
+
+Management of shared resources has always been been an important subject. Over the past decades, researchers and practitioners have considered the sharing of CPU [39, 15, 35, 40] and network bandwidth [28, 13, 17, 23, 33, 36], and developed a plethora of solutions to allocate and schedule these resources. The problem of cache allocation for better isolation, quality-of-service [24] or attack resilience [29] has also been studied under various contexts, including CPU cache [25], disk cache [31] and caching in storage systems [34]. One of the most popular allocation policies is fair
+sharing [16] or max-min fairness [27, 14]. Due to the nice properties, it has been implemented using various methods, such as round-robin, proportional resource sharing [39] and fair queuing [18], and has been extended to support multiple resource types [20] and resource constraints [21]. The key differentiator for our work from the ones mentioned above, is that we consider shared data.
+None of the works above identifies the impossibility of three important properties with shared files. There are other techniques that have been studied to provide fairness and efficiency of shared cache. Prefetching of data into the cache before access, either through hints from applications [31] or predication [22], can improve the overall system efficiency. Profiling applications
+[25] is useful for providing application-sepcific information. We view these techniques as orthogonal to our work. Other techniques such as throttling access rate requires the system to identify good thresholds.
+
+
+task schedulers
+resource schedulers
+
+recency(LRU) and frequency(LFU) global efficiency
+
+maximize the overall cache hit ratio.
+
+Memcached, Redis, HDFS Caching, Tachyon, Spark, Haloop, Hadoop
+
+FairRide studies the problem of how to share cache space between multiple users that access shared files.
+
+Anti-Caching
+
+Five-minute Rule
+
+
+
+
+

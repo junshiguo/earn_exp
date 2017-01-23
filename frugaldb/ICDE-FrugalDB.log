@@ -1,0 +1,1401 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.10.15)  23 SEP 2016 23:57
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ICDE-FrugalDB.tex
+(./ICDE-FrugalDB.tex
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+(./IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count94
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip44
+\subfigcapskip=\skip45
+\subfigcaptopadj=\dimen128
+\subfigbottomskip=\skip46
+\subfigcapmargin=\dimen129
+\subfiglabelskip=\skip47
+\c@subfigure=\count95
+\c@lofdepth=\count96
+\c@subtable=\count97
+\c@lotdepth=\count98
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip48
+\subfig@bottom=\skip49
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen130
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count99
+\c@ALG@rem=\count100
+\c@ALG@nested=\count101
+\ALG@tlm=\skip50
+\ALG@thistlm=\skip51
+\c@ALG@Lnr=\count102
+\c@ALG@blocknr=\count103
+\c@ALG@storecount=\count104
+\c@ALG@tmpcounter=\count105
+\ALG@tmplength=\skip52
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks16
+\float@box=\box28
+\@float@everytoks=\toks17
+\@floatcapt=\box29
+)
+\@float@every@algorithm=\toks18
+\c@algorithm=\count107
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+No file ICDE-FrugalDB.aux.
+\openout1 = `ICDE-FrugalDB.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+-- Lines per column: 56 (exact).
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen131
+\scratchbox=\box30
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen132
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks20
+)
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <11> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7.69997> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5.5> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 36.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 36.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <9> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 36.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 36.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omspcr.fd
+File: omspcr.fd 
+)
+LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
+ (./intro.tex
+
+LaTeX Warning: Citation `PDBaaS' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `RMTD' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `salesforce' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `Force' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `MTDB1' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `DBMaaS' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `DBaaS' on page 1 undefined on input line 3.
+
+
+LaTeX Warning: Citation `Workload-Aware' on page 1 undefined on input line 7.
+
+
+LaTeX Warning: Citation `Relational' on page 1 undefined on input line 7.
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Reference `sec:SDI' on page 2 undefined on input line 11.
+
+
+LaTeX Warning: Reference `sec:PFA' on page 2 undefined on input line 11.
+
+
+LaTeX Warning: Reference `sec:Experiments' on page 2 undefined on input line 11
+.
+
+
+LaTeX Warning: Reference `sec:RelatedWork' on page 2 undefined on input line 11
+.
+
+
+LaTeX Warning: Reference `sec:Conclusion' on page 2 undefined on input line 11.
+
+
+) (./related.tex
+
+LaTeX Warning: Citation `DRA' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `IMVR' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `AVMC' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `DRA' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `CloudScale' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Dolly' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Q-clouds' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `NSMT' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `SQLVM' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `CPUS' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `Workload-Aware' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `TSLOS' on page 2 undefined on input line 5.
+
+
+LaTeX Warning: Citation `WIDE' on page 2 undefined on input line 7.
+
+
+LaTeX Warning: Citation `schema-mapping' on page 2 undefined on input line 7.
+
+
+LaTeX Warning: Citation `M-Store' on page 2 undefined on input line 7.
+
+Missing character: There is no ¡ in font ptmr7t!
+Missing character: There is no ¯ in font ptmr7t!
+
+LaTeX Warning: Citation `PAaaS' on page 2 undefined on input line 9.
+
+
+LaTeX Warning: Citation `ActiveSLA' on page 2 undefined on input line 9.
+
+) (./design.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+
+LaTeX Warning: Reference `fig:Architecture' on page 3 undefined on input line 7
+.
+
+
+LaTeX Warning: Reference `sec:PFA' on page 3 undefined on input line 15.
+
+
+LaTeX Warning: File `figures-final/Architecture.eps' not found on input line 19
+.
+
+Package epstopdf Info: Source file: <figures-final/Architecture.eps>
+(epstopdf)             Output file: <figures-final/Architecture-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/Architecture
+-eps-converted-to.pdf figures-final/Architecture.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/Architecture-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 ...cale=0.44]{figures-final/Architecture.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `Workload-Aware' on page 3 undefined on input line 28.
+
+
+LaTeX Warning: Citation `Real-Trace' on page 3 undefined on input line 28.
+
+
+LaTeX Warning: Citation `CTBP' on page 3 undefined on input line 28.
+
+[3]
+
+LaTeX Warning: Reference `fig:PAA' on page 4 undefined on input line 30.
+
+
+LaTeX Warning: File `figures-final/Workload-PAA.eps' not found on input line 34
+.
+
+Package epstopdf Info: Source file: <figures-final/Workload-PAA.eps>
+(epstopdf)             Output file: <figures-final/Workload-PAA-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/Workload-PAA
+-eps-converted-to.pdf figures-final/Workload-PAA.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/Workload-PAA-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.34 ...cale=0.25]{figures-final/Workload-PAA.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 5637) in paragraph at lines 45--46
+ \OT1/ptm/m/it/10 2) Non-Deterministic Work-load Model: [][] \OT1/ptm/m/n/10 In
+ the non-
+ []
+
+) (./migration.tex [4]
+Underfull \vbox (badness 2600) has occurred while \output is active []
+
+
+
+LaTeX Warning: Reference `table:update-operations' on page 5 undefined on input
+ line 21.
+
+[5]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 29.
+) (./scheduler.tex
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 35.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 35.
+
+
+LaTeX Warning: Reference `constraint5' on page 6 undefined on input line 36.
+
+[6]
+
+LaTeX Warning: Reference `constraint5' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `constraint1' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `constraint2' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `constraint3' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `constraint4' on page 7 undefined on input line 40.
+
+
+LaTeX Warning: Reference `constraint10' on page 7 undefined on input line 45.
+
+
+LaTeX Warning: Reference `constraint5' on page 7 undefined on input line 45.
+
+
+LaTeX Warning: Reference `constraint12' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint3' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint3' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint10' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint4' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint10' on page 7 undefined on input line 55.
+
+
+LaTeX Warning: Reference `constraint13' on page 7 undefined on input line 59.
+
+
+LaTeX Warning: Reference `constraint4' on page 7 undefined on input line 59.
+
+
+Overfull \hbox (22.88557pt too wide) detected at line 72
+\OML/cmm/m/it/10 F\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 i; m\OT1/cmr/m/n/10 ) = []
+ []
+
+
+LaTeX Warning: Reference `alg:1' on page 7 undefined on input line 86.
+
+
+LaTeX Warning: Reference `alg:2' on page 7 undefined on input line 86.
+
+
+LaTeX Warning: Reference `alg:1' on page 7 undefined on input line 86.
+
+
+LaTeX Warning: Reference `alg:2' on page 7 undefined on input line 86.
+
+
+LaTeX Warning: Reference `alg:2' on page 7 undefined on input line 86.
+
+) (./exp.tex [7]
+
+LaTeX Warning: Citation `YCSB' on page 8 undefined on input line 7.
+
+
+LaTeX Warning: Reference `table:features' on page 8 undefined on input line 8.
+
+[8]
+
+LaTeX Warning: Citation `TSLOS' on page 9 undefined on input line 40.
+
+
+LaTeX Warning: Reference `fig:Comparison-StaticSLO' on page 9 undefined on inpu
+t line 42.
+
+
+LaTeX Warning: File `figures-final/icde/both-out.eps' not found on input line 4
+8.
+
+Package epstopdf Info: Source file: <figures-final/icde/both-out.eps>
+(epstopdf)             Output file: <figures-final/icde/both-out-eps-converted-
+to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/icde/both-ou
+t-eps-converted-to.pdf figures-final/icde/both-out.eps>
+(epstopdf)             \includegraphics on input line 48.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/icde/both-out-eps-converted-to.
+pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 ...ale=0.44]{figures-final/icde/both-out.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/consolidation.eps' not found on input l
+ine 65.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/consolidation.eps>
+(epstopdf)             Output file: <figures-final/tpcc/consolidation-eps-conve
+rted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/consoli
+dation-eps-converted-to.pdf figures-final/tpcc/consolidation.eps>
+(epstopdf)             \includegraphics on input line 65.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/consolidation-eps-converte
+d-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65     }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/consolidation.eps' not found on input l
+ine 71.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/consolidation.eps>
+(epstopdf)             Output file: <figures-final/ycsb/consolidation-eps-conve
+rted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/consoli
+dation-eps-converted-to.pdf figures-final/ycsb/consolidation.eps>
+(epstopdf)             \includegraphics on input line 71.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/consolidation-eps-converte
+d-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71     }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:Workload-Consolidation' on page 9 undefined on in
+put line 76.
+
+[9]
+
+LaTeX Warning: Reference `fig:stps-vi-1' on page 10 undefined on input line 80.
+
+
+
+LaTeX Warning: Reference `fig:stps-vi-2' on page 10 undefined on input line 80.
+
+
+
+LaTeX Warning: File `figures-final/tpcc/vt-memory.eps' not found on input line 
+88.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vt-memory.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vt-memory-eps-converted
+-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vt-memo
+ry-eps-converted-to.pdf figures-final/tpcc/vt-memory.eps>
+(epstopdf)             \includegraphics on input line 88.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vt-memory-eps-converted-to
+.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.88     }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/vq-memory.eps' not found on input line 
+94.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vq-memory.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vq-memory-eps-converted
+-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vq-memo
+ry-eps-converted-to.pdf figures-final/tpcc/vq-memory.eps>
+(epstopdf)             \includegraphics on input line 94.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vq-memory-eps-converted-to
+.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94     }
+          
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vt-memory.eps' not found on input line 
+105.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vt-memory.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vt-memory-eps-converted
+-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vt-memo
+ry-eps-converted-to.pdf figures-final/ycsb/vt-memory.eps>
+(epstopdf)             \includegraphics on input line 105.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vt-memory-eps-converted-to
+.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vq-memory.eps' not found on input line 
+111.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vq-memory.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vq-memory-eps-converted
+-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vq-memo
+ry-eps-converted-to.pdf figures-final/ycsb/vq-memory.eps>
+(epstopdf)             \includegraphics on input line 111.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vq-memory-eps-converted-to
+.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:stps-vtar1' on page 10 undefined on input line 11
+6.
+
+
+LaTeX Warning: Reference `fig:stps-vtar2' on page 10 undefined on input line 11
+6.
+
+
+LaTeX Warning: File `figures-final/tpcc/vt-ac-f.eps' not found on input line 12
+4.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vt-ac-f.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vt-ac-f-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vt-ac-f
+-eps-converted-to.pdf figures-final/tpcc/vt-ac-f.eps>
+(epstopdf)             \includegraphics on input line 124.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vt-ac-f-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.124     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/vt-ac-m.eps' not found on input line 13
+0.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vt-ac-m.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vt-ac-m-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vt-ac-m
+-eps-converted-to.pdf figures-final/tpcc/vt-ac-m.eps>
+(epstopdf)             \includegraphics on input line 130.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vt-ac-m-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.130     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vt-ac-f.eps' not found on input line 14
+2.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vt-ac-f.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vt-ac-f-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vt-ac-f
+-eps-converted-to.pdf figures-final/ycsb/vt-ac-f.eps>
+(epstopdf)             \includegraphics on input line 142.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vt-ac-f-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.142     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vt-ac-m.eps' not found on input line 14
+8.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vt-ac-m.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vt-ac-m-eps-converted-t
+o.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vt-ac-m
+-eps-converted-to.pdf figures-final/ycsb/vt-ac-m.eps>
+(epstopdf)             \includegraphics on input line 148.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vt-ac-m-eps-converted-to.p
+df' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.148     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:stps-dlps-1' on page 10 undefined on input line 1
+54.
+
+
+LaTeX Warning: Reference `fig:stps-dlps-2' on page 10 undefined on input line 1
+54.
+
+[10]
+
+LaTeX Warning: File `figures-final/tpcc/vt-slo.eps' not found on input line 162
+.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vt-slo.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vt-slo-eps-converted-to
+.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vt-slo-
+eps-converted-to.pdf figures-final/tpcc/vt-slo.eps>
+(epstopdf)             \includegraphics on input line 162.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vt-slo-eps-converted-to.pd
+f' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.162     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/vq-slo.eps' not found on input line 168
+.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/vq-slo.eps>
+(epstopdf)             Output file: <figures-final/tpcc/vq-slo-eps-converted-to
+.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/vq-slo-
+eps-converted-to.pdf figures-final/tpcc/vq-slo.eps>
+(epstopdf)             \includegraphics on input line 168.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/vq-slo-eps-converted-to.pd
+f' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.168     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vt-slo.eps' not found on input line 179
+.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vt-slo.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vt-slo-eps-converted-to
+.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vt-slo-
+eps-converted-to.pdf figures-final/ycsb/vt-slo.eps>
+(epstopdf)             \includegraphics on input line 179.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vt-slo-eps-converted-to.pd
+f' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.179     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/vq-slo.eps' not found on input line 185
+.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/vq-slo.eps>
+(epstopdf)             Output file: <figures-final/ycsb/vq-slo-eps-converted-to
+.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/vq-slo-
+eps-converted-to.pdf figures-final/ycsb/vq-slo.eps>
+(epstopdf)             \includegraphics on input line 185.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/vq-slo-eps-converted-to.pd
+f' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.185     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:latency-vtar-1' on page 11 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Reference `fig:latency-vtar-2' on page 11 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Reference `fig:latency-vtsc-1' on page 11 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Reference `fig:latency-vtsc-2' on page 11 undefined on input lin
+e 192.
+
+
+LaTeX Warning: Reference `fig:latency-fvfr' on page 11 undefined on input line 
+194.
+
+
+Underfull \hbox (badness 2334) in paragraph at lines 194--195
+[]\OT1/ptm/m/n/10 Besides, we bench-marked com-par-a-tively the re-sponse
+ []
+
+
+Underfull \hbox (badness 3601) in paragraph at lines 194--195
+\OT1/ptm/m/n/10 la-tency for ten-ant queries ob-tained on Fru-galDB, the
+ []
+
+
+LaTeX Warning: File `figures-final/tpcc/latency-ac-f.eps' not found on input li
+ne 202.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/latency-ac-f.eps>
+(epstopdf)             Output file: <figures-final/tpcc/latency-ac-f-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/latency
+-ac-f-eps-converted-to.pdf figures-final/tpcc/latency-ac-f.eps>
+(epstopdf)             \includegraphics on input line 202.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/latency-ac-f-eps-converted
+-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.202     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/latency-ac-m.eps' not found on input li
+ne 208.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/latency-ac-m.eps>
+(epstopdf)             Output file: <figures-final/tpcc/latency-ac-m-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/latency
+-ac-m-eps-converted-to.pdf figures-final/tpcc/latency-ac-m.eps>
+(epstopdf)             \includegraphics on input line 208.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/latency-ac-m-eps-converted
+-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.208     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/latency-ac-f.eps' not found on input li
+ne 220.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/latency-ac-f.eps>
+(epstopdf)             Output file: <figures-final/ycsb/latency-ac-f-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/latency
+-ac-f-eps-converted-to.pdf figures-final/ycsb/latency-ac-f.eps>
+(epstopdf)             \includegraphics on input line 220.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/latency-ac-f-eps-converted
+-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.220     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/latency-ac-m.eps' not found on input li
+ne 226.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/latency-ac-m.eps>
+(epstopdf)             Output file: <figures-final/ycsb/latency-ac-m-eps-conver
+ted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/latency
+-ac-m-eps-converted-to.pdf figures-final/ycsb/latency-ac-m.eps>
+(epstopdf)             \includegraphics on input line 226.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/latency-ac-m-eps-converted
+-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.226     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/latency-slo.eps' not found on input lin
+e 238.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/latency-slo.eps>
+(epstopdf)             Output file: <figures-final/tpcc/latency-slo-eps-convert
+ed-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/latency
+-slo-eps-converted-to.pdf figures-final/tpcc/latency-slo.eps>
+(epstopdf)             \includegraphics on input line 238.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/latency-slo-eps-converted-
+to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.238     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/latency-slo.eps' not found on input lin
+e 244.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/latency-slo.eps>
+(epstopdf)             Output file: <figures-final/ycsb/latency-slo-eps-convert
+ed-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/latency
+-slo-eps-converted-to.pdf figures-final/ycsb/latency-slo.eps>
+(epstopdf)             \includegraphics on input line 244.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/latency-slo-eps-converted-
+to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.244     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/latency-memory.eps' not found on input 
+line 256.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/latency-memory.eps>
+(epstopdf)             Output file: <figures-final/tpcc/latency-memory-eps-conv
+erted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/latency
+-memory-eps-converted-to.pdf figures-final/tpcc/latency-memory.eps>
+(epstopdf)             \includegraphics on input line 256.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/latency-memory-eps-convert
+ed-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.256     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/ycsb/latency-memory.eps' not found on input 
+line 262.
+
+Package epstopdf Info: Source file: <figures-final/ycsb/latency-memory.eps>
+(epstopdf)             Output file: <figures-final/ycsb/latency-memory-eps-conv
+erted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/ycsb/latency
+-memory-eps-converted-to.pdf figures-final/ycsb/latency-memory.eps>
+(epstopdf)             \includegraphics on input line 262.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/ycsb/latency-memory-eps-convert
+ed-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.262     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/voltdb_frugaldb.eps' not found on input
+ line 274.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/voltdb_frugaldb.eps>
+(epstopdf)             Output file: <figures-final/tpcc/voltdb_frugaldb-eps-con
+verted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/voltdb_
+frugaldb-eps-converted-to.pdf figures-final/tpcc/voltdb_frugaldb.eps>
+(epstopdf)             \includegraphics on input line 274.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/voltdb_frugaldb-eps-conver
+ted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.274     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/tpcc/mysql_frugaldb.eps' not found on input 
+line 280.
+
+Package epstopdf Info: Source file: <figures-final/tpcc/mysql_frugaldb.eps>
+(epstopdf)             Output file: <figures-final/tpcc/mysql_frugaldb-eps-conv
+erted-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/tpcc/mysql_f
+rugaldb-eps-converted-to.pdf figures-final/tpcc/mysql_frugaldb.eps>
+(epstopdf)             \includegraphics on input line 280.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/tpcc/mysql_frugaldb-eps-convert
+ed-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.280     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Reference `fig:mc-dm' on page 11 undefined on input line 323.
+
+[11]
+
+LaTeX Warning: File `figures-final/memory_f500-2000.eps' not found on input lin
+e 331.
+
+Package epstopdf Info: Source file: <figures-final/memory_f500-2000.eps>
+(epstopdf)             Output file: <figures-final/memory_f500-2000-eps-convert
+ed-to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/memory_f500-
+2000-eps-converted-to.pdf figures-final/memory_f500-2000.eps>
+(epstopdf)             \includegraphics on input line 331.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/memory_f500-2000-eps-converted-
+to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.331     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures-final/load_time.eps' not found on input line 337.
+
+Package epstopdf Info: Source file: <figures-final/load_time.eps>
+(epstopdf)             Output file: <figures-final/load_time-eps-converted-to.p
+df>
+(epstopdf)             Command: <repstopdf --outfile=figures-final/load_time-ep
+s-converted-to.pdf figures-final/load_time.eps>
+(epstopdf)             \includegraphics on input line 337.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures-final/load_time-eps-converted-to.pdf'
+ not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.337     }
+           
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+No file ICDE-FrugalDB.bbl.
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[12
+
+] (./ICDE-FrugalDB.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3410 strings out of 493304
+ 53438 string characters out of 6139870
+ 128005 words of memory out of 5000000
+ 6782 multiletter control sequences out of 15000+600000
+ 40774 words of font info for 82 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 42i,9n,24p,2445b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
+es/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ICDE-FrugalDB.pdf (12 pages, 231280 bytes).
+PDF statistics:
+ 112 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

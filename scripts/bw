@@ -1,0 +1,121 @@
+#!/usr/bin/gnuplot
+reset
+set yrange [0:720]
+set ytics 100
+set grid nopolar
+set key samplen 1 horizontal left top
+set ylabel "TIME(s)" center offset 1.5,0
+set style data histogram
+set style histogram clustered gap 1
+set style fill solid 1 border
+set style histogram rowstacked title textcolor lt -1 offset character 0,-1,0
+set boxwidth 0.8 relative
+set xtics border in scale 0,0 nomirror rotate by -45  autojustify font ",14"
+set bmargin 5
+set term pngcairo color solid lw 2 font 'Times_New_Roman,14' size 500,480
+set output "../figures/scan741_time_all.png"
+plot newhistogram "ROUND", "../results/scan741.time3" using ($2):xticlabels(1)  lc 0 fillstyle pattern 9 title "FILE-1",\
+	"" using ($3):xticlabels(1) lc rgb 0 fillstyle pattern 3 title "",\
+	"" using ($4):xticlabels(1) lc rgb 0 fillstyle pattern 6 title "",\
+	newhistogram "ONE",\
+	"" using ($5 * 2):xticlabels(1)  lc rgb 0 fillstyle pattern 9  title "",\
+	"" using 6:xticlabels(1) lc rgb 0 fillstyle pattern 3  title "FILE-2",\
+	"" using 7:xticlabels(1) lc rgb 0 fillstyle pattern 6  title "",\
+	newhistogram "TWO",\
+	"" using ($8 * 2):xticlabels(1)  lc rgb 0 fillstyle pattern 9  title "",\
+	"" using ($9 * 2):xticlabels(1) lc rgb 0 fillstyle pattern 3  title "",\
+	"" using 10:xticlabels(1) lc rgb 0 fillstyle pattern 6  title "FILE-3"
+set output
+
+
+reset
+set yrange [0:620]
+set ytics 100
+set grid nopolar
+set key samplen 1 horizontal left top
+set ylabel "TIME(s)" center offset 1.5,0
+set style data histogram
+set style histogram clustered gap 1
+set style fill solid 1 border
+set style histogram rowstacked title textcolor lt -1 offset character 0,-1,0
+set boxwidth 0.8 relative
+set xtics border in scale 0,0 nomirror rotate by -45  autojustify font ",14"
+set bmargin 5
+set term pngcairo color solid lw 2 font 'Times_New_Roman,14' size 500,480
+set output "../figures/scan444_time_all.png"
+plot newhistogram "ROUND", "../results/scan444.time3" using ($2):xticlabels(1)  lc 0 fillstyle pattern 9 title "FILE-1",\
+	"" using ($3):xticlabels(1) lc rgb 0 fillstyle pattern 3 title "",\
+	"" using ($4):xticlabels(1) lc rgb 0 fillstyle pattern 6 title "",\
+	newhistogram "ONE",\
+	"" using ($5 * 2):xticlabels(1)  lc rgb 0 fillstyle pattern 9  title "",\
+	"" using 6:xticlabels(1) lc rgb 0 fillstyle pattern 3  title "FILE-2",\
+	"" using 7:xticlabels(1) lc rgb 0 fillstyle pattern 6  title "",\
+	newhistogram "TWO",\
+	"" using ($8 * 2):xticlabels(1)  lc rgb 0 fillstyle pattern 9  title "",\
+	"" using ($9 * 2):xticlabels(1) lc rgb 0 fillstyle pattern 3  title "",\
+	"" using 10:xticlabels(1) lc rgb 0 fillstyle pattern 6  title "FILE-3"
+set output
+
+
+reset
+set key samplen 1 horizontal center top
+set ylabel "# OF BLOCKS PROCESSED IN MEMORY (AVG)"
+set style data histogram
+set style histogram  rowstacked
+set boxwidth 0.8 relative
+set style fill solid 1 border
+set term pngcairo color solid lw 2 font 'Times_New_Roman,14'
+set grid nopolar
+set style data histograms
+set key horizontal top center  width 3
+set output "../figures/block_count_avg.png"
+set xtics border in scale 0,0 nomirror rotate by -45  autojustify font ",14"
+set ylabel offset 0.5,-2
+set style histogram rowstacked title textcolor lt -1 offset character 0,-1,0
+set bmargin 5
+plot newhistogram "ROUND", "../results/scan444/avg_block_access_count" using 2:xticlabels(1) lc 0 fillstyle pattern 9 title "LOCAL",\
+	"" using 3:xticlabels(1) lc 0 fillstyle pattern 3 title "",\
+	"" using 4:xticlabels(1) lc 0 fillstyle pattern 6 title "", \
+	newhistogram "ONE",\
+	"../results/scan444/avg_block_access_count" using 5:xticlabels(1) lc 0 fillstyle pattern 9 notitle,\
+	"" using 6:xticlabels(1) lc 0 fillstyle pattern 3 title "REMOTE",\
+	"" using 7:xticlabels(1) lc 0 fillstyle pattern 6 notitle, \
+	newhistogram "TWO",\
+	"../results/scan444/avg_block_access_count" using 8:xticlabels(1) lc 0 fillstyle pattern 9 notitle,\
+	"" using 9:xticlabels(1) lc 0 fillstyle pattern 3 notitle,\
+	"" using 10:xticlabels(1) lc 0 fillstyle pattern 6 title "UFS"
+set output
+
+
+reset
+set grid
+set key samplen 1
+set ylabel "IN-MEMORY PERCENTAGE(%)"
+set xlabel "TIME "
+set yrange [0:100]
+set term pngcairo color solid lw 3 font 'Times_New_Roman,16' size 500,480
+set ylabel "IN-MEMORY DATA SIZE (GB)"
+set yrange [0:80]
+set output "../figures/3-2-earn-1000-ds.png"
+plot "../results/3-2/scan-earn2-round-1000.summary" using (($5)/1024/1024/1024) w lp pt 7 ps 2  lc 0 title "FILE-1", \
+	"" using (($6)/1024/1024/1024) w lp pt 9 ps 2 lc 0 title "FILE-2", \
+	"" using (($7)/1024/1024/1024) w lp pt 12 ps 2 lc 0 title "FILE-3"
+set output "../figures/3-2-maxmin-1000-ds.png"
+plot "../results/3-2/scan-maxmin-round-1000-3-2.summary" using (($5)/1024/1024/1024) w lp pt 7 ps 2  lc 0 title "FILE-1", \
+	"" using (($6)/1024/1024/1024) w lp pt 9 ps 2 lc 0 title "FILE-2", \
+	"" using (($7)/1024/1024/1024) w lp pt 12 ps 2 lc 0 title "FILE-3"
+set output
+
+
+reset
+set key samplen 1
+set xlabel "WINDOW SIZE (GB)"
+set ylabel "AVERAGE COMPLETION TIME (s)"
+set yrange [70:130]
+set xrange [0:1000]
+set term pngcairo color solid lw 2 font 'Times_New_Roman,14' size 640,480
+set output "../figures/window_size_time.png"
+plot "../results/window_size.time" using 1:2 with lp pointtype  7 lw 2 lc 0 title "ROUND",\
+	"" using 1:3 with lp pt 9 lw 2 lc 0 title "ONE" , \
+	"" using 1:4 with lp pt 12 lw 2 lc 0 title "TWO"
+set output

@@ -1,0 +1,342 @@
+\section{Experimental Evaluation}\label{sec:Experiments}
+In this section, we validate FrugalDB's feasibility and demonstrate the efficiency of FrugalDB with extensive experiments. We show that not only much higher tenant consolidation but also lower query processing latency could be achieved on FrugalDB provides, when tenants' performance SLOs should be satiated, compared with various baseline experimental settings, which include multi-tenant database implementations purely based on the memory-based database and the disk-based database.
+
+\subsection{Experimental Setting}
+All experiments are conducted on two physical machines, which are interconnected with a 1000M high-speed Ethernet switch. One of the two machines runs FrugalDB as the server machine to process tenants' workloads, the other runs threads as clients to simulate tenants' activities. The server machine is equipped with eight Intel(R) Core(TM) i7-4770K CPU and 24GB memory, installed with Ubuntu Linux, MySQL(version 5.5) and VoltDB(enterprise edition 4.9), and the client machine is equipped with six eight-core Intel Xeon 1.87GHz CPUs and 16GB memory, also installed with Ubuntu Linux.
+
+As there are few real-life multi-tenant OLTP workloads readily available, we generate synthetic workloads based on TPC-C and YCSB~\cite{YCSB} to benchmark the performance of FrugalDB and corresponding baseline settings. TPC-C and YCSB are popular standard database benchmark specifications, consisting of read-only and update operations that simulate the activities of complex database applications.
+As FrugalDB's targeting application scenarios mainly concern tenants with relatively simple data access requests, we extract all read and update operations contained in TPC-C and YCSB queries, and then leverage these operations to generate the benchmark workloads, where each tenant request only contains one of these extracted operations. Our aggregate benchmark workloads are composed of tenants with corresponding performance SLOs, different data sizes and different read/write percentages, as Table.~\ref{table:features} shows. The value of a tenant's performance SLO specifies the upper bound of requests that the tenant will generate within one minute, for example a tenant whose performance SLO is $100$ Requests/Min could at most send $100$ requests to and get corresponding responses for these requests from the multi-tenant platform. For the consideration of simplicity, we set three levels of performance SLO: Low, Medium and High, where tenants of the same level are set with the same performance SLO. In this paper, we benchmarked our systems with three Low-Medium-High performance SLO combinations: 5-50-500, 20-60-200 and 100-150-200, where the 5-50-500 combination is leveraged as our default setting, which represents scenarios where tenants require diverse performance SLOs. The 20-60-200 combination represents scenarios where tenants require less diverse performance SLOs, while the 100-150-200 combination represents scenarios where tenants require almost equal performance SLOs. Benchmarking with these three performance SLO combinations could comprehensively reveal FrugalDB's applicability under various scenarios.
+
+For each experiment setting, we run an experiment five times to measure the performance of FrugalDB and other baseline implementations, and we report the average of corresponding metrics as the final results. Each experiment lasts for forty minutes, consisting of eight five-minute time intervals. Note that not all tenants would be concurrently active at the same time in real-world multi-tenant environments, we thus leverage tenant active ratio in our settings to represent the percentage of active tenants over all tenants, and we set the default tenant active ratio to 30\%. As a tenant's activeness changes over time, active tenants across different time intervals vary. So we randomly choose a part of active/inactive tenants and let them become inactive/active, maintaining the overall number of active tenants unchanged across various intervals. During each interval, we first follow Poisson distributions to assign each active tenant with a workload intensity, whose expected value amounts to the tenant's performance SLO, and then maintain the tenant's workload stable at the assigned intensity throughout the whole interval. If the assigned workload intensity exceeds a tenant's performance SLO, the tenant's workload intensity is assigned to the tenant's performance SLO.
+
+As we mainly want to evaluate FrugalDB's performance of handling workload bursts, we set the third, the fourth and the seventh intervals out of the eight five-minute intervals to be workload-bursty intervals, and during these bursty intervals all active tenants' expected workloads are set to their performance SLOs, which are aggregately adequate to outstrip the processing capacity of the disk-based MySQL database. Tenants' expected workloads during other non-workload-bursty intervals are only set proportionately to their performance SLOs, and the proportion is set to 20\% in our settings. FrugalDB gains chances during non-workload-bursty intervals to migrate tenant data into/from the memory-based VoltDB database from/into the MySQL database for the purpose of workload offloading. Finally, the memory storage capacity of the memory-based VoltDB database is an important factor which impacts FrugalDB's performance, as it determines the number of tenants whose workloads could be offloading from the MySQL database into the VoltDB database, and we set FrugalDB's default memory storage capacity to 2000MB.
+
+\begin{table}[!htb]
+\caption{Workload summary.}
+\label{table:features}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+Feature & \multicolumn{3}{c|}{Setting} \\
+\hline
+SLO & L(30\%) & M(50\%) & H(20\%) \\
+\hline
+TPC-C Data Size(MB) & 6.9(50\%) & 16.3(30\%) & 35.2(20\%) \\
+\hline
+YCSB Data Size(MB) & 10(50\%) & 20(30\%) & 29(20\%) \\
+\hline
+Write/Read Percentage & W(20\%) & R(80\%) & ---\\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Experimental Results and Analysis}
+
+We compared FrugalDB's performance on satisfying tenants' performance SLOs and responsiveness to tenant queries with our baseline settings. Firstly, we define whether a tenant's performance SLO is satisfied or not as: if a tenant is supposed to finish $A$ operations in a minute, while actually sends $B$ queries and gets $C$ query responses in that minute, then we say that the tenant has $A-C$ queries not being fulfilled; if $A-C$ equals zero, then we say this tenant's performance SLO is satisfied during this minute; otherwise we say this tenant's performance SLO is violated and $A-C$ queries are violated for the tenant during that minute. We reported statistics about the number of tenants whose performance SLOs are violated during each minute as the metric for evaluating FrugalDB's performance on satisfying tenants' performance SLOs, and the percentage of query latencies as the metric for evaluating FrugalDB's responsiveness to tenants' queries.
+
+
+\subsubsection{Comparison with Static-SLO}
+
+We compared FrugalDB with the method proposed by Lang et al.~\cite{TSLOS} by simulation, which aims to minimize the number of servers, of different types with different hardware configurations and different processing capacities, needed to satisfy the performance SLOs for a group of tenants. They only considered tenants' SLOs and do not take the dynamic changes of tenants' workloads into consideration, so this method belongs to the static workload consolidation scheme with SLO guarantees, compared with dynamic solutions just as FrugalDB, and we call this method Static-SLO in our paper. As FrugalDB combines disk-based and in-memory these two kinds of databases, we could consider that our multi-tenant platform possesses two different types of databases servers, namely the disk-based database servers and the in-memory database servers, and we implemented the Static-SLO scheme based on these two types of servers. We firstly benchmarked the tenant consolidation that our FrugalDB database server could yield, and then we computed the minimal number of two different types of databases servers that the Static-SLO scheme needs to satiate so many tenants' SLOs, and thus acquired the workload consolidation plan, assigning a tenant's workload to a corresponding server. As cloud service providers usually leverage workload migration strategies to reduce overall operational cost of the whole cloud platform, we combine the Static-SLO scheme with a workload migration strategy to handle situations that FrugalDB targets, where tenants' workloads may change dynamically and dramatically.
+
+The workload-migration-based Static-SLO scheme always tries to satiate all active tenants' SLOs with as few servers as possible by migrating workloads between servers. When it is possible to satiate all active tenants' SLOs with less servers, it powers off servers and migrates workloads running on powered-off servers to remaining servers; when the running servers are not able to satiate all active tenants' SLOs, it initiates servers and then migrates workloads to the newly-initiated servers so that all active tenants' SLOs could be satisfied. We mainly benchmarked the amount of data migration required to satiate all tenants' performance SLOs for FrugalDB and the workload-migration-based Static-SLO scheme, and the results are presented in Fig.~\ref{fig:Comparison-StaticSLO}. We can see that the amount of data migration required by the workload-migration-based Static-SLO scheme far exceeds that required by FrugalDB, what more important is that data migration of the former happens between servers across network, while data migration of latter only happens within FrugalDB's database server, between its two different databases. So FrugalDB presumably could satiate a group of tenants' SLOs with less servers while with better performance.
+
+
+\begin{figure}[!htbp]
+\begin{minipage}[b]{1.0\linewidth}
+    \centering
+    \includegraphics[scale=0.44]{figures-final/icde/both-out.eps}
+    \caption{Data migration with dynamic and static SLO satisfaction.}
+    \label{fig:Comparison-StaticSLO}
+\end{minipage}
+\end{figure}
+
+
+\subsubsection{Tenant Consolidation}
+
+Firstly we measured the number of tenants that could be served without performance SLO violations, namely the capacity for tenant consolidation, that different multi-tenant implementations could support for TPC-C and YCSB workloads. Here we compared FrugalDB's performance under the non-deterministic workload model with the implementation purely based on the VoltDB database, and the resource-reservation implementation purely based on the MySQL database. We measured the number of tenants whose workloads amount to their performance SLOs that the MySQL database could support, and take this number as the capacity of tenant consolidation that the MySQL database could provide with resource reservation.
+
+\begin{figure}[!htbp]
+    \subfigure[TPCC]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/consolidation.eps}
+        \end{minipage}
+    }
+    \subfigure[YCSB]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/consolidation.eps}
+        \end{minipage}
+    }
+    \caption{Tenant consolidation.}
+    \label{fig:Workload-Consolidation}
+\end{figure}
+
+Fig.~\ref{fig:Workload-Consolidation} presents the evaluation results of the tenant consolidation capacity obtained on various multi-tenant database implementations under the non-deterministic workload model, and we can see that: the implementation purely based on the VoltDB database provides the lowest tenant consolidation; the resource-reservation implementation purely based on the MySQL database provides two times higher tenant consolidation than the VoltDB-based implementation; while FrugalDB could achieve 15 times higher tenant consolidation than the VoltDB-based implementation, which is almost 5 times higher than the resource-reservation MySQL-based implementation. It is not difficult to imagine that the VoltDB-based implementation would provide the lowest tenant consolidation, as it needs to load a tenant's data into memory before it could begin to process the tenant's workload, and the memory storage capacity bottlenecks its tenant consolidation capacity. The resource-reservation MySQL-based implementation is bottlenecked by the storage subsystem, where huge amounts of disk accesses are required, and thus intense contention for memory buffer resources is incurred, when the total number of tenants being served increases beyond its processing capacity. FrugalDB could provider much higher tenant consolidation, mainly because of two reasons: workloads for highly active tenants are separated from workloads for tenants with low activeness, where having the high-performance VoltDB database process workloads for most highly active tenants guarantees that enough crucial resources, namely memory buffer resources, are spared for these tenants, and are not impacted by numerous tenants with  low activeness, which still reside in the MySQL database to share disk bandwidth, memory buffer and CPU resources; massive numbers of non-active tenants reside in the MySQL database and consume few resources. We did not benchmark the tenant consolidation capacity under the deterministic workload model, which could provide even higher tenant consolidation than the non-deterministic workload model, as the expected high-intensity workloads offloaded into VoltDB under the non-deterministic workload model exist chances of not actually turning out to be high-intensity workloads, while all workload offloading under the deterministic workload model would be effective.
+
+\subsubsection{Satisfaction of tenants' SLOs}
+
+Firstly, we benchmarked the satisfaction of tenants' performance SLOs obtained both on the multi-tenant database implementation purely based on the MySQL database and on FrugalDB with various memory storage capacity. As comparison experiments between FrugalDB and the MySQL-based implementation should be performed with the same configurations, the MySQL-based implementation could not follow the resource-reservation fashion, which could only support far less tenants than FrugalDB. So it follows the best-effort fashion without any control mechanism of guarantee tenants' performance SLOs, and Fig.~\ref{fig:stps-vi-1} and Fig.~\ref{fig:stps-vi-2} present the evaluation results. We can see that the number of tenants whose performance SLOs are violated on MySQL far exceeds on FrugalDB, and the number of tenants whose SLOs are violated on FrugalDB decreases as its memory storage capacity increases, while all tenants' SLOs are satisfied on FrugalDB when its memory storage capacity is set to 2000MB.
+
+\begin{figure}[!htb]
+    \subfigure[SLO-violated Tenants]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vt-memory.eps}
+        \end{minipage}
+    }
+    \subfigure[Not-Answered Queries]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vq-memory.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' performance SLOs for various implementations, with TPCC.}
+\label{fig:stps-vi-1}
+\end{figure}
+
+\begin{figure}[!htb]
+    \subfigure[SLO-violated Tenants]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vt-memory.eps}
+        \end{minipage}
+    }
+    \subfigure[Not-Answered Queries]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vq-memory.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' performance SLOs for various implementations, with YCSB.}
+\label{fig:stps-vi-2}
+\end{figure}
+
+Secondly, we benchmarked the satisfaction of tenants' performance SLOs obtained on FrugalDB and the MySQL-based implementation with various tenant active ratios, and the evaluation results are presented in Fig.~\ref{fig:stps-vtar1} and Fig.~\ref{fig:stps-vtar2}. We can see that: on the MySQL-based implementation, the number of tenants whose SLOs are violated increases by 80$\sim$120 as tenants active ratio increases by 5\% for TPC-C workloads, by 120$\sim$140 for YCSB workloads; on FrugalDB, all tenants' SLOs are satisfied until tenant active ratio increases to 30\%, when a moderate portion of tenants' SLOs could not be guaranteed as the overall number of active tenants exceeds FrugalDB's processing capacity, and the number of tenants whose SLOs are violated increases to around 200 for TPC-C workloads and 380 for YCSB workloads, which indicates FrugalDB's application scenarios.
+
+\begin{figure}[!htb]
+    \subfigure[FrugalDB]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vt-ac-f.eps}
+        \end{minipage}
+    }
+    \subfigure[MySQL-based implementation]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vt-ac-m.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' performance SLOs with TPCC, with various tenant active ratios.}
+\label{fig:stps-vtar1}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \subfigure[FrugalDB]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vt-ac-f.eps}
+        \end{minipage}
+    }
+    \subfigure[MySQL-based implementation]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vt-ac-m.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' performance SLOs with YCSB, with various tenant active ratios.}
+\label{fig:stps-vtar2}
+\end{figure}
+
+
+Finally, we benchmarked the satisfaction of tenants' performance SLOs obtained on FrugalDB and the MySQL-based implementation with different Low-Medium-High performance SLO combinations, and the evaluation results are presented in Fig.~\ref{fig:stps-dlps-1} and Fig.~\ref{fig:stps-dlps-2} respectively. We can see that: different Low-Medium-High performance SLO combinations engender huge impacts on both FrugalDB's and MySQL's performance, where FrugalDB could guarantee all tenants' SLOs for TPCC workloads while a moderate few tenants' SLOs do not get guaranteed, when the SLO combination is 20-60-200, while a prohibitive number of tenants' SLOs are violated when the SLO combination is set to 100-150-200 both for TPCC and YCSB workloads, which makes FrugalDB's performance only slightly better than the MySQL-based implementation, this is because tenants' workload intensity contrast is not obvious when the SLO combination is set to 100-150-200, which leaves little optimization space for FrugalDB and the superiority of the workload offloading mechanism does not get embodied apparently. The impact of the SLO combination also indicates FrugalDB's application scenarios, that is to say, FrugalDB could provide better tenant consolidation for multi-tenant database applications where tenants' activeness and workload intensity present sharp divergences.
+
+\begin{figure}[!htb]
+    \subfigure[SLO-violated tenants]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vt-slo.eps}
+        \end{minipage}
+    }
+    \subfigure[Not answered queries]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/vq-slo.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' SLO with TPCC, with different Low-Medium-High performance SLO combinations.}
+\label{fig:stps-dlps-1}
+\end{figure}
+
+\begin{figure}[!htb]
+    \subfigure[SLO-violated tenants]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vt-slo.eps}
+        \end{minipage}
+    }
+    \subfigure[Not answered queries]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/vq-slo.eps}
+        \end{minipage}
+    }
+\caption{Satisfaction of tenants' SLO with YCSB, with different Low-Medium-High performance SLO combinations.}
+\label{fig:stps-dlps-2}
+\end{figure}
+
+\subsubsection{Query latency}
+
+We compared FrugalDB's response latency for tenant queries with the multi-tenant database implementations purely based on the MySQL database and purely based on the VoltDB database respectively, with different experiment settings. The evaluation results obtained on FrugalDB and the MySQL-based implementation with various tenant active ratios are presented in Fig.~\ref{fig:latency-vtar-1} and Fig.~\ref{fig:latency-vtar-2}. We can see that: FrugalDB provides overall shorter response time for tenant queries, and tenant active ratio casts little impact on response latency for most tenant queries. This is mainly because FrugalDB needs to execute data loading for workload offloading, which may impact its responses to a part of tenant queries. Fig.~\ref{fig:latency-vtsc-1} and Fig.~\ref{fig:latency-vtsc-2} presents the evaluation results achieved on FrugalDB and on the MySQL-based implementation with various tenant SLO combinations and with different workload models. We can see that: the MySQL-based implementation provides faster responses to most tenant queries, while a minor portion of tenant queries' response latency exceeds FrugalDB, especially when the SLO combination is set to 100-150-200; FrugalDB's responses to most queries with different workload models possess similar latency, while the MySQL-based implementation provides faster responses. Note that experiments with different workload models were performed with the overall tenant number setting to the tenant consolidation of FrugalDB with the deterministic workload model.
+
+Besides, we benchmarked comparatively the response latency for tenant queries obtained on FrugalDB, the VoltDB-based implementation, and on the resource-reservation MySQL-based implementation. Due to page limitation, we only present experimental results with TPCC workloads, and the evaluation results are illustrated in Fig.~\ref{fig:latency-fvfr}. Note that these experiments were performed with the overall tenant number setting to the tenant consolidation that the VoltDB-based implementation and the resource-reservation MySQL-based implementation could provide respectively. We can see that: FrugalDB responds faster to tenant queries than both the VoltDB-based implementation and the resource-reservation MySQL-based implementation. It is surprising that the VoltDB-based implementation could only provide slower responses than FrugalDB, this is because most of its memory resources are consumed on storing tenants' data and then it only has fewer memory resources available for query processing, which results in decreased parallelism of query processing in VoltDB. While the workload offloading mechanism implemented by FrugalDB could guarantee that high-intensity workloads are offloaded from the MySQL database and VoltDB possesses enough memory resources to process these high-intensity workloads in the meanwhile.
+
+\begin{figure}[!htb]
+    \subfigure[FrugalDB]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/latency-ac-f.eps}
+        \end{minipage}
+    }
+    \subfigure[MySQL]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/latency-ac-m.eps}
+        \end{minipage}
+    }
+\caption{Query latency of FrugalDB and MySQL for TPCC, with various tenant active ratios.}
+\label{fig:latency-vtar-1}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \subfigure[FrugalDB]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/latency-ac-f.eps}
+        \end{minipage}
+    }
+    \subfigure[MySQL]{
+        \begin{minipage}[b]{0.45\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/latency-ac-m.eps}
+        \end{minipage}
+    }
+\caption{Query latency of FrugalDB and MySQL for YCSB, with various tenant active ratios.}
+\label{fig:latency-vtar-2}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \subfigure[TPCC]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/latency-slo.eps}
+        \end{minipage}
+    }
+    \subfigure[YCSB]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/latency-slo.eps}
+        \end{minipage}
+    }
+    \caption{Query latency of FrugalDB and MySQL, with various tenant SLO combinations.}
+    \label{fig:latency-vtsc-1}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \subfigure[TPCC]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/latency-memory.eps}
+        \end{minipage}
+    }
+    \subfigure[YCSB]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/ycsb/latency-memory.eps}
+        \end{minipage}
+    }
+    \caption{Query latency of FrugalDB and MySQL, with various memory storage capacities.}
+    \label{fig:latency-vtsc-2}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \subfigure[FrugalDB vs VoltDB]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/voltdb_frugaldb.eps}
+        \end{minipage}
+    }
+    \subfigure[FrugalDB vs resource-reservation MySQL]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/tpcc/mysql_frugaldb.eps}
+        \end{minipage}
+    }
+\caption{Query latency of VoltDB and resource-reservation MySQL with TPCC.}
+\label{fig:latency-fvfr}
+\end{figure}
+
+
+%\begin{figure}[!htb]
+%    \subfigure[TPCC]{
+%        \begin{minipage}[b]{0.46\linewidth}
+%            \centering
+%            \includegraphics[scale=0.34]{figures/voltdb_frugaldb.eps}
+%        \end{minipage}
+%    }
+%    \subfigure[YCSB]{
+%        \begin{minipage}[b]{0.46\linewidth}
+%            \centering
+%            \includegraphics[scale=0.34]{figures/mysql_frugaldb.eps}
+%        \end{minipage}
+%    }
+%\caption{Query latency of FrugalDB and VoltDB.}
+%\label{fig:latency-fvfr}
+%\end{figure}
+
+%\begin{figure}[!htb]
+%    \subfigure[TPCC]{
+%        \begin{minipage}[b]{0.46\linewidth}
+%            \centering
+%            \includegraphics[scale=0.34]{figures/voltdb_frugaldb.eps}
+%        \end{minipage}
+%    }
+%    \subfigure[YCSB]{
+%        \begin{minipage}[b]{0.46\linewidth}
+%            \centering
+%            \includegraphics[scale=0.34]{figures/mysql_frugaldb.eps}
+%        \end{minipage}
+%    }
+%\caption{Query latency of FrugalDB and resource-reservation MySQL.}
+%\label{fig:latency-fvfr}
+%\end{figure}
+
+
+\subsubsection{Memory consumption and data migration cost}
+
+At last, we report statistics about memory consumption of the VoltDB database contained in FrugalDB and the time cost of migrating data into/out of the VoltDB database from/into the MySQL database throughout the whole experiments, and Fig.~\ref{fig:mc-dm} presents the evaluation results. we can see that: the aggregate memory consumption of the VoltDB database increases rapidly as its memory storage capacity increases, and increasing the memory storage capacity by 500MB makes the aggregate memory consumption increase 1000MB$\sim$1500MB, because VoltDB needs more memory buffer resources to process increased workloads; the aggregate memory consumption decreases after the workload bursts, because there is few tenants still residing in the VoltDB database, and memory resources consumed could be released to the operating system; the time of loading tenants' data into VoltDB of course increases linearly as its memory storage capacity increases, and it takes about 150 seconds to load 500MB tenants' data, and this is the reason why we should initiate the workload offloading process in advance; while migrating updated data from VoltDB into MySQL for data persistence only takes 1/4 of the time spent on data loading, as only a part of the whole data is updated and needs to be persisted in the MySQL database.
+
+\begin{figure}[!htb]
+    \subfigure[]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/memory_f500-2000.eps}
+        \end{minipage}
+    }
+    \subfigure[]{
+        \begin{minipage}[b]{0.46\linewidth}
+            \centering
+            \includegraphics[scale=0.34]{figures-final/load_time.eps}
+        \end{minipage}
+    }
+\caption{(a)Memory consumption, (b)Cost of data migration.}
+\label{fig:mc-dm}
+\end{figure}
+
+

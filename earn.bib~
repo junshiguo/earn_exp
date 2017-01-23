@@ -1,0 +1,57 @@
+@inproceedings{dist-cache-hdfs,
+  author    = {Jing Zhang and
+               Gong{-}Qing Wu and
+               Xuegang Hu and
+               Xindong Wu},
+  title     = {A Distributed Cache for Hadoop Distributed File System in Real-Time
+               Cloud Services},
+  booktitle = {13th {ACM/IEEE} International Conference on Grid Computing, {GRID}
+               2012, Beijing, China, September 20-23, 2012},
+  pages     = {12--21},
+  year      = {2012},
+  crossref  = {DBLP:conf/grid/2012},
+  url       = {http://dx.doi.org/10.1109/Grid.2012.17},
+  doi       = {10.1109/Grid.2012.17},
+  timestamp = {Tue, 24 Nov 2015 15:19:46 +0100},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/grid/ZhangWHW12},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{tachyon,
+  author    = {Haoyuan Li and
+               Ali Ghodsi and
+               Matei Zaharia and
+               Scott Shenker and
+               Ion Stoica},
+  title     = {Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks},
+  booktitle = {Proceedings of the {ACM} Symposium on Cloud Computing, Seattle, WA,
+               USA, November 03 - 05, 2014},
+  pages     = {6:1--6:15},
+  year      = {2014},
+  crossref  = {DBLP:conf/cloud/2014},
+  url       = {http://doi.acm.org/10.1145/2670979.2670985},
+  doi       = {10.1145/2670979.2670985},
+  timestamp = {Fri, 24 Apr 2015 14:24:49 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/cloud/LiGZSS14},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{rate-aware,
+  author    = {Yong Li and
+               Dan Feng and
+               Zhan Shi},
+  title     = {Enhancing both fairness and performance using rate-aware dynamic storage
+               cache partitioning},
+  booktitle = {Proceedings of the 2013 International Workshop on Data-Intensive Scalable
+               Computing Systems, {DISCS} 2013, Denver, Colorado, USA, November 18,
+               2013},
+  pages     = {31--36},
+  year      = {2013},
+  crossref  = {DBLP:conf/sc/2013discs},
+  url       = {http://doi.acm.org/10.1145/2534645.2534650},
+  doi       = {10.1145/2534645.2534650},
+  timestamp = {Sun, 16 Aug 2015 12:18:42 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/conf/sc/LiFS13},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+

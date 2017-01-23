@@ -1,0 +1,87 @@
+\documentclass[10pt,conference,letterpaper]{IEEEtran}
+\usepackage{graphicx}
+
+\usepackage{subfigure}
+\begin{document}
+\section{related work}
+There has been various prior works on in-memory storage and caches. 
+Cache for distributed storage systems is different from that in traditional single-node page-based file systems.
+Simple cache replacement policies, like LRU, gain poor efficiency performance encountering big data scenarios.
+
+Some framework-specific solutions include \cite{dist-cache-hdfs}, \cite{mapreduce-cache}, etc. 
+\cite{mapreduce-cache} accelerates map-reduce process by caching temporary data between map and reduce processes.
+HDCache~\cite{dist-cache-hdfs} is a distributed layered cache system built on the top of HDFS. It manages cache layer similarly to HDFS manages disk data, and organizes cache services in a P2P style using a distributed hash table.
+On the other hand, our approach EARNCache along with Tachyon~\cite{tachyon} manages cache as a distributed file system, which can benefit a greater variety of computing frameworks and under file systems.
+
+RAMCloud~\cite{ramcloud} proposes keeping information entirely in memory. Also various in-memory databases \cite{hstore} \cite{memcached} \cite{redis} store and process all data in memory. Spark~\cite{spark} also benefits from in-memory computing.
+All-in-memory approach fits well in web services, while memory capacity becomes a bottleneck in big data semantics.
+
+\cite{pacman}, \cite{fairride} and \cite{rate-aware} improve cache efficiency and fairness through different replacement strategies. 
+PACMan~\cite{pacman} proposed LIFE and LFU-F policies. LIFE minimizes average completion time of jobs by favouring input files with smaller waves, and LFU-F maximizes cluster efficiency by favouring files that are accessed more frequently.
+FairRide~\cite{fairride} focuses on management of shared resources and extends the max-min~\cite{maxmin}\cite{maxmin2} fairness with probabilistic blocking to avoid cheating.
+\cite{rate-aware} proposed a dynamic partition strategy based on predicted utility on both fairness and performance. 
+EARNCache also improves cache efficiency and fairness through new cache replacement policy. In comparison, EARNCache calculates base partition of memory by the access frequency information and adopts additional strategy to achieve fairness using the partition as a guide.
+
+
+
+\begin{thebibliography}{1}
+
+\bibitem{hadoop} http://hadoop.apache.org/
+
+\bibitem{spark} http://spark.apache.org/
+
+\bibitem{alluxio} http://www.alluxio.org/
+
+\bibitem{memcached} https://memcached.org/
+
+\bibitem{redis} http://redis.io/
+
+\bibitem{dist-cache-hdfs} Zhang J, Wu G, Hu X, et al.
+\newblock A distributed cache for hadoop distributed file system in real-time cloud services.
+\newblock {\em International Conference on Grid Computing. IEEE.}, 2012: 12-21.
+
+\bibitem{tachyon} Li H, Ghodsi A, Zaharia M, et al. 
+\newblock Tachyon: Reliable, memory speed storage for cluster computing frameworks.
+\newblock {\em SoCC.}, 2014.
+
+\bibitem{rate-aware} Li Y, Feng D, Shi Z. 
+\newblock Enhancing both fairness and performance using rate-aware dynamic storage cache partitioning.
+\newblock  {\em International Workshop on Data-Intensive Scalable Computing Systems.} 2013.
+
+\bibitem{pacman} Ananthanarayanan G, Ghodsi A, Wang A, et al. 
+\newblock PACMan: coordinated memory caching for parallel jobs.
+\newblock {\em NSDI.}, 2012.
+
+\bibitem{fairride} Pu Q, Li H, Zaharia M, et al. 
+\newblock FairRide: near-optimal, fair cache sharing.
+\newblock {\em NSDI.} 2016. 
+
+\bibitem{rdd} Zaharia M, Chowdhury M, Das T, et al. 
+\newblock Resilient distributed datasets: A fault-tolerant abstraction for in-memory cluster computing.
+\newblock {\em NSDI.} 2012.
+
+\bibitem{mapreduce-cache} Zhang S, Han J, Liu Z, et al. 
+\newblock Accelerating MapReduce with distributed memory cache.
+\newblock {\em ICPADS.} 2009.
+
+\bibitem{ramcloud} Ousterhout J, Agrawal P, Erickson D, et al. 
+\newblock The case for RAMClouds: scalable high-performance storage entirely in DRAM. 
+\newblock {\em ACM SIGOPS Operating Systems Review.} 2009.
+
+\bibitem{hstore} Kallman R, Kimura H, Natkins J, et al. 
+\newblock H-store: a high-performance, distributed main memory transaction processing system. 
+\newblock {\em VLDB Endowment.} 2008.
+
+\bibitem{maxmin} Ma Q, Steenkiste P, Zhang H.
+\newblock Routing high-bandwidth traffic in max-min fair share networks
+\newblock {\em SIGCOMM CCR.} 1996.
+
+\bibitem{maxmin2} Cao Z, Zegura E W. 
+\newblock Utility max-min: An application-oriented bandwidth allocation scheme
+\newblock {\em INFOCOM.} 1999.
+
+
+\end{thebibliography}
+
+
+\end{document}

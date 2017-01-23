@@ -5,7 +5,8 @@ set key samplen 1
 set ylabel "IN-MEMORY PERCENTAGE(%)"
 set xlabel "TIME "
 set yrange [0:100]
-set term postscript eps color solid lw 3 "Times_New_Roman" 24
+set size 0.8,1
+set term postscript eps color solid lw 3 "Times_New_Roman" 30
 set output "../figures/3-1-earn-1000-percent.eps"
 plot "../results/3-1/scan-earn2-round-1000.summary" using 2 w lp pt 7 ps 2 lc rgb "#3CB371" title "FILE-1", \
 	"" using 3 w lp pt 9 ps 2 lc rgb "#9370DB" title "FILE-2", \

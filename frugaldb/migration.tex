@@ -1,0 +1,52 @@
+\section{Runtime Migration}
+
+FrugalDB implements its data serving engine by seamlessly integrating disk-based and in-memory databases, where the disk-based database is responsible for processing massive numbers of tenants' low-intensity workloads, and the in-memory database is mainly responsible for processing a relatively moderate number of tenants' high-intensity workloads. FrugalDB takes advantage of the high processing capacity provided by the in-memory database to temporarily offload high-intensity workloads from the disk-based database, as the in-memory database could handle these high-intensity workloads more easily, so that the tremendous data serving pressure caused by high-intensity workloads could be relieved from the disk-based database, which thereby could focus on serving massive number of tenants with low-intensity workloads. By combining the disk-based database and the in-memory database, FrugalDB could dynamically separate low-intensity workloads from high-intensity workloads and guarantee that tenants with high-intensity workloads could be served with enough crucial resources, so that differentiated services could be provided for tenants with various performance SLOs, whose workload pressures yet change dynamically.
+
+The whole process of offloading a tenant's workload consists of three stages: ~1) Data Migration: FrugalDB firstly loads the tenant's data into the in-memory database, and the disk-based database still keeps the original copy of the data; ~2) Query Processing: after the tenant's data has been loaded into the in-memory database, all queries submitted by the tenant are directed from the disk-based database to the in-memory database for processing; ~3) Data Reverse Migration: when the tenant's workload falls from high-intensity to low-intensity and FrugalDB needs to spare memory resources in the in-memory database to offload other high-intensity workloads, it reversely offloads the tenant's workload from the in-memory database to the disk-based database, where updated data in the in-memory database is synchronized into the disk-based database, and then all queries submitted by the tenant are directed to the disk-based database for processing.
+
+\subsubsection{Query Processing}
+
+When the overall workload pressure imposed on the DBaaS system is moderate and the disk-based database suffices to handle all active tenants' workloads, it will process all queries submitted by all tenants. When more and more tenants' workload pressure turn into high-intensity and the disk-based database is not be able to serve all active tenants, some tenants' high-intensity workloads will be offloaded into the in-memory database, and it will process all queries submitted by these tenants whose workloads are offloaded, while queries submitted by other tenants will still be processed by the disk-based database.
+
+For a tenant whose workload should be offloaded into the in-memory database, the disk-based database continues to process the tenant's queries until all data of the tenant has been loaded into the in-memory database, and the in-memory database is ready to takes over query processes. As data loading takes time, queries which may change a tenant's data status could be submitted during the process of data loading, and thus data which has been loaded into the in-memory database is not consistent with data which still resides in the disk-based database. So we have to handle a tenant's queries properly during workload offloading, especially for queries which would change the tenant's database status, which include insert, update and delete, as these three kinds of queries will cause data inconsistency problem for the tenant, since both the disk-based database and the in-memory database separately possess the tenant's data copies.
+
+We add  four column attributes: \emph{rowId}, \emph{isInserted}, \emph{inUpdated}, \emph{isDeleted}, to each tenant's table both in the disk-based database and in the in-memory database, where the rowId attribute of a table is used to locate a row in the table quickly, which increases by $1$ each time a row is inserted into the table, and isInserted, inUpdated and isDeleted these three attributes are employed to identify the type of update operation performed on a row. When a tenant's database status changes during workload offloading, FrugalDB keeps record of the update opreation by properly setting these three attributes for corresponding rows: all of these three attributes of each row is set to be ``FALSE" originally; when a row is inserted, its rowId attribute gets set properly and its isInserted attribute is set to ``TRUE"; when a row is updated, its isUpdated attribute is set to ``TRUE", and if a row is deleted, its isDeleted attribute is set to ``TRUE".
+
+After the in-memory database begins to handle processing of a tenant's workload, any further operations that change the tenant's database status should also be recorded in the in-memory database: when a row is inserted, its rowId attribute gets set properly and its isInserted attribute is set to ``TRUE"; when a row is updated, its isUpdated attribute is set to ``TRUE", and if a row is deleted, its isDeleted attribute is set to ``TRUE".
+
+\subsubsection{Data Migration and Reverse Migration}
+
+When FrugalDB loads a tenant's data into memory tables in the in-memory database, these memory tables' isInserted, inUpdated, isDeleted attributes are all set to ``FALSE". After a tenant's data has been loaded into the in-memory database, FrugalDB collects all rows which have been changed since the time when FrugalDB begins to load the tenant's data into the in-memory database, and then replay all operations recorded in these collected rows in the in-memory database without changing any of isInserted, inUpdated, isDeleted attributes of corresponding memory tables: inserts rows whose isInserted attributes are ``TRUE" into the corresponding memory tables, updates rows whose isUpdated attributes are ``TRUE" with the latest data version, and delete rows whose isDeleted attributes are ``TRUE". As replaying these operations on memory tables is very efficient, we can block further operations which will change the tenant's database status temporarily, and execute these newly issued operations on the memory tables after replaying of all previous operations finishes and the in-memory database begins to take over processing the tenant's workload.
+
+When FrugalDB needs to reversely offload a tenant's workload into the disk-based database, any operations which have change the tenant's database status should get reflected into the disk-based database, which will update corresponding tables in the disk-based database properly, and update operations that should be performed on these tables are illustrated in Table.~\ref{table:update-operations}, which are dependent on the status combinations of isInserted, inUpdated, isDeleted attributes of each row contained in the memory tables. For rows whose attribute combinations result in ``INSERT" operations, INSERT commands should be called to insert these rows into tables in the disk-based database; for rows whose attribute combinations result in ``UPDATE" operations, UPDATE commands should be called to UPDATE these rows; for rows whose attribute combinations result in ``DELETE" operations, DELETE commands should be called to delete these rows from the MySQL tables; and rows whose attribute combinations result in ``IGNORE" operations will be ignored directly.
+
+As there still exist a few chances that memory tables may still get updated during the process of writing back into the disk-based database, after having collected rows which should be written back to the disk-based database, FrugalDB first deletes all rows which are tagged ``isDeleted" from memory tables, and then sets all of these three isInserted, inUpdated, isDeleted attributes to ``FALSE" for all remaining rows in these memory tables. When performing updates to the tenant's database in the disk-based database, new updates happen to memory tables, FrugalDB processes these update operations following normal procedures. After all previous update operations are reflected into the disk-based database, FrugalDB recollects those newly updated rows and replays these update to tables in the disk-based database one more time. As it is assumed that the tenant's workload has fallen to low-intensity, we expect that there are only a very limited number of new updates to the memory tables, and the second data writeback should be finished very soon. So any further operations submitted by the tenant should be blocks temporarily until all updates have been reflected into the disk-based database, after which subsequent queries submitted by the tenant are directed to the disk-based database for execution.
+
+\begin{table}[!htb]
+\caption{Update operations to the disk-based database.}
+\label{table:update-operations}
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Attribute Value} &  Update Operation\\
+\hline
+isInserted  & isUpdated & isDeleted & \\
+\hline
+FALSE & FALSE & FALSE & IGNORE\\
+\hline
+TRUE  & FALSE & FALSE & INSERT\\
+\hline
+FALSE  & TRUE & FALSE & UPDATE\\
+\hline
+FALSE  & FALSE & TRUE & DELETE\\
+\hline
+TRUE  & TRUE & FALSE & INSERT\\
+\hline
+TRUE  & FALSE & TRUE & IGNORE\\
+\hline
+FALSE  & TRUE & TRUE & DELETE\\
+\hline
+TRUE  & TRUE & TRUE & IGNORE\\
+\hline
+\end{tabular}
+\end{table}

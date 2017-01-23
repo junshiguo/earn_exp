@@ -1,0 +1,66 @@
+%\documentclass{vldb}
+
+\documentclass[conference]{IEEEtran}
+
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+\usepackage{algpseudocode,algorithm}
+\usepackage{epstopdf}
+
+\newcommand{\eat}[1]{}
+
+
+\begin{document}
+
+% ****************** TITLE ****************************************
+
+\title{FrugalDB: A Cost-Efficient Multi-Tenant Database System }
+
+\author{
+Yifeng Luo $^{\S 1}$, Junshi Guo $^{\S 2}$, Jiaye Zhu $^{\S 3}$, Zhenjie Zhang $^{\dag 4}$, Shuigeng Zhou $^{\S 5}$
+\vspace{1.6mm}\\
+\fontsize{10}{10}\selectfont\itshape
+$^{\dag}$ School of Computer Science, Fudan University, China P.R.\\
+\fontsize{9}{9}\selectfont\ttfamily\upshape
+$^{1,2,3,5}$\{luoyf,jsguo14,zhujy14,sgzhou\}fudan.edu.cn
+\vspace{1.2mm}\\
+\fontsize{10}{10}\selectfont\rmfamily\itshape
+$^{\dag}$Advanced Digital Sciences Center, Illinois at Singapore Pte. Ltd., Singapore \\
+\fontsize{9}{9}\selectfont\ttfamily\upshape
+$^{4}$zhenjie@adsc.com.sg
+}
+
+
+\maketitle
+
+\begin{abstract}
+Quality of Service~(QoS) is at the core of the vision in Database as a Service~(DBaaS), which provides guarantees to the database users on the usability of the database service, even when the underlying database infrastructure is shared by multiple users. Traditional approaches in DBaaS reserve computation resources, e.g. CPU and memory, based on the Service Level Objective~(SLO) given by the database users, so that the database engine always possesses sufficient resource to accomplish the expected workload under any circumstance. Such resource reservation schemes inevitably result in poor resource utilization, as the actual workload of the tenants are usually way below their maximal workload expectation described in their SLO.
+
+To enhance resource utilization and reduce operational cost, we propose a novel architecture in our prototype multi-tenant database system, \emph{FrugalDB}, which generally consolidates more tenants with performance SLOs on one single database server. FrugalDB accommodates two independent database engines, an in-memory engine for high workloads with tight SLOs, and a disk-based engine for less active workload with loose SLOs. The dual processing logic enables huge computation resource saving, by assigning the workloads from the tenants to the appropriate engine for query processing. Different from traditional multi-tenant database system, the design of FrugalDB put emphasis on the migration cost minimization, which is incurred when moving workloads across the engines. Based on a workload estimation, FrugalDB responds quickly to the workload updates with minimal overhead on database migration. We validate and evaluate FrugalDB with extensive experiments, which proves its prohibitively higher tenant consolidation rate with performance SLO guarantees, fewer performance SLO violations and acceptable response latency.
+\end{abstract}
+
+
+\input{intro}
+
+\input{related}
+
+\input{design}
+
+\input{migration}
+
+\input{scheduler}
+
+\input{exp}
+
+
+\section{Conclusion}\label{sec:Conclusion}
+To further improve tenant consolidation and reduce operational cost, we propose a novel workload offloading mechanism to implement DBaaS with performance guarantees. We aim at scenarios where only a moderate portion out of massively numerous tenants would be simultaneously active to generate enough requests to catch up with their performance SLOs. This mechanism employs a disk-based database to process massive data serving requests from tenants with low-activeness, and an in-memory database to temporarily offload high-intensity workloads from the disk-based database, when it does not suffice to guarantee all active tenants' performance SLOs. We build a cost model to comprehensively evaluate the offloading benefits of active tenants' workloads, and choose those workloads which could contribute most to minimize violations of performance guarantees. We validate and evaluate our scheme with extensive experiments. Experimental results show that our scheme could handle workload bursts efficiently and achieve impressively high tenant consolidation. To the best of our knowledge, our work is the first ever trying to serve massive number of tenants by employing in-memory database technique for multi-tenancy.
+
+\bibliographystyle{abbrv}
+%\begin{thebibliography}
+%\end{thebibliography}
+\bibliography{vldb}  % vldb_sample.bib is the name of the Bibliography in this case
+
+\end{document}

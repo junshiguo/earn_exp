@@ -1,0 +1,169 @@
+\documentclass[letterpaper,twocolumn,10pt]{article}
+\usepackage{epsfig,endnotes}
+\usepackage{times}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{balance}  % for  \balance command ON LAST PAGE  (only there!)
+\usepackage{algpseudocode,algorithm}
+\usepackage{epstopdf}
+\usepackage{comment}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage[normalem]{ulem}
+% do not change these values
+% TEMPLATE for Usenix papers, specifically to meet requirements of
+%  USENIX '05
+% originally a template for producing IEEE-format articles using LaTeX.
+%   written by Matthew Ward, CS Department, Worcester Polytechnic Institute.
+% adapted by David Beazley for his excellent SWIG paper in Proceedings,
+%   Tcl 96
+% turned into a smartass generic template by De Clarke, with thanks to
+%   both the above pioneers
+% use at your own risk.  Complaints to /dev/null.
+% make it two column with no page numbering, default is 10 point
+
+% Munged by Fred Douglis <douglis@research.att.com> 10/97 to separate
+% the .sty file from the LaTeX source template, so that people can
+% more easily include the .sty file into an existing document.  Also
+% changed to more closely follow the style guidelines as represented
+% by the Word sample file.
+
+% Note that since 2010, USENIX does not require endnotes. If you want
+% foot of page notes, don't include the endnotes package in the
+% usepackage command, below.
+
+% This version uses the latex2e styles, not the very ancient 2.09 stuff.
+
+\begin{document}
+
+%don't want date printed
+\date{}
+
+%make title bold and 14 pt font (Latex default is non-bold, 16 pt)
+\title{\Large \bf EARNCache: Self-adaptive Incremental Big Data Caching on Non-Big Clusters}
+
+%for single author (just remove % characters)
+\author{
+{\rm Junshi Guo}\\
+Fudan University
+\and
+{\rm Yifeng Luo}\\
+Fudan University
+\and
+{\rm Eric Lo}\\
+The Chinese University of Hong Kong
+\and
+{\rm Shuigeng Zhou}\\
+Fudan University
+} % end author
+% copy the following lines to add more authors
+% \and
+% {\rm Name}\\
+%Name Institution
+
+\maketitle
+
+% Use the following at camera-ready time to suppress page numbers.
+% Comment it out when you first submit the paper for review.
+\thispagestyle{empty}
+
+
+\subsection*{Abstract}
+Memory caching plays a crucial role in determining whether people's requirements on (quasi-)real-time processing of exploding data on big-data clusters could be satisfied. As big data clusters usually are concurrently shared by multiple computing frames, applications or end users, there exists intense competition for memory cache resources, especially on small clusters which are supposed to process big datasets comparable to large clusters \textcolor{red}{yet} with tightly limited resources. Applying existing on-demand caching strategies on small shared clusters inevitably results in frequent cache thrashings when the conflicts of simultaneous cache resource demands are not mediated, and then the running efficiency of the whole big data cluster will be deteriorated.
+
+In this paper, we propose a novel self-adaptive incremental big data caching mechanism, called \textcolor{red}{EARNCache}, to improve the cache efficiency for shared big data clusters, especially for small clusters where cache thrashings are more likely to occur. \textcolor{red}{EARNCache} self-adaptively adjusts resource allocation strategies according to the competition condition of cache resources: evolving to incremental caching to depress competition when resources are in deficit, devolving to traditional on-demand-caching to expedite data caching-in when resources are in surplus. Our experimental evaluation shows that \textcolor{red}{EARNCache}'s elasticity could enhance the cache efficiency for shared big data clusters, with improved resource utilization.
+
+\input{intro}
+
+%\input{motivation}
+
+\input{design}
+
+\input{exp}
+
+\input{related}
+
+\section{Conclusion}\label{sec:Conclusion}
+
+In this paper, we propose the EarnCache incremental big data caching mechanism for non-big clusters, which self-adaptively adjusts resource allocation strategies according to the competition condition of cache resources: evolving to incremental caching to depress competition when resources are in deficit, falling back to traditional on-demand-caching to expedite data caching-in when resources are in surplus. With EarnCache, files are not cached as a whole on demand, and applications or end users incrementally take over cache resources from others by accessing their datasets. EarnCache achieves improved resource utilization and performance.
+
+%\bibliographystyle{abbrv}
+%\bibliography{earn}
+
+\begin{thebibliography}{99}%\scriptsize
+%
+\bibitem {dist-cache-hdfs}
+J. Zhang, G. Wu, X. Hu, et al. A Distributed Cache for Hadoop Distributed File System in Real-Time Cloud Services. In Proceedings of GRID, 2012, pages 12-21.
+%
+\bibitem {ramcloud}
+J. Ousterhout, P. Agrawal, D. Erickson, et al. The Case for RAMCloud. Communications of the ACM. Vol.54 No.7(2011), pages 121-130.
+
+\bibitem {mapreduce}
+J. Dean, S. Ghemawat, et al. MapReduce: Simplified data processing on large cluster. In Proceedings of OSDI, 2004, pages 137-150.%
+
+\bibitem {tachyon}
+H. Li, A. Ghodsi, M. Zaharia, et al. Tachyon: Reliable, Memory Speed Storage for Cluster Computing Frameworks. In Proceedings of SOCC, 2014, pages 6:1-6:15.
+%
+\bibitem {rate-aware}
+Y. Li, D. Feng, Z. Shi. Enhancing Both Fairness and Performance Using Rate-aware Dynamic Storage Cache Partitioning. In Proceedings of DISCS, 2013, pages 31-36.
+%
+\bibitem{hdfs1}
+K. Shvachko, H. Kuang, S. Radia, et al. The Hadoop Distributed File System. In Proceedings of MSST, 2010, pages 121-134.
+%
+
+\bibitem{pacman}
+G. Ananthanarayanan, A. Ghodsi, A. Warfield, et al. PACMan: Coordinated Memory Caching for Parallel Jobs. In Proceedings of NSDI, 2012, pages 267-280.
+%
+\bibitem{fairride}
+Q. Pu, H. Li, M. Zaharia, et al. FairRide: Near-Optimal, Fair Cache Sharing. In Proceedings of NSDI, 2016, pages 393-406.
+%
+\bibitem{rdd}
+M. Zaharia, M. Chowdhury, T. Das, et al. Resilient Distributed Datasets: {A} Fault-Tolerant Abstraction for In-Memory Cluster Computing. In Proceedings of NSDI, 2012, pages 15-28.
+%
+\bibitem{mapreduce-cache}
+S. Zhang, J. Han, Z. Liu, et al. Accelerating MapReduce with Distributed Memory Cache. In Proceedings of ICPADS, 2009, pages 472-478.
+%
+
+\bibitem{rcss}
+Y. Luo, S. Luo, J. Guan, et al. A RAMCloud Storage System based on HDFS: Architecture, Implementation and Evaluation. Journal of Systems and Software. Vol.86 No.3(2013), pages 744-750.
+
+\bibitem{maxmin}
+Q. Ma, P. Steenkiste, H. Zhang. Routing High-Bandwidth Traffic in Max-Min Fair Share Networks. In Proceedings of SIGCOMM, 1996, pages 206-217.
+
+\bibitem{maxmin2}
+Z. Cao, W. Zegura. Utility Max-Min: An Application-Oriented Bandwidth Allocation Scheme. In Proceedings of INFOCOM, 1999, pages 793-801.
+
+\bibitem{ltrf}
+S. Tang, B. Lee, B. He, et al. Long-Term Resource Fairness: Towards Economic Fairness on Pay-as-you-use Computing Systems. In Proceedings of ICS, 2014, pages 251-260.
+
+\bibitem{drf}
+A. Ghodsi, M. Zaharia, B. Hindman, et al. Dominant Resource Fairness: Fair Allocation of Multiple Resource Types. In Proceedings of NSDI, 2011, pages 323-336.
+
+%
+\bibitem{redis}
+Redis. http://redis.io.
+%
+\bibitem{hdfs2}
+HDFS. http://hadoop.apache.org/hdfs.
+%
+\bibitem{hadoop} 
+Hadoop. http://hadoop.apache.org.
+
+\bibitem{spark} 
+Spark. http://spark.apache.org.
+%
+\bibitem{memcached}
+Memcached. http://danga.com/memcached.
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+
+
+
