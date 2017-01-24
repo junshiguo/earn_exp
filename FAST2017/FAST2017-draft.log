@@ -1,0 +1,568 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.20)  24 JAN 2017 21:38
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**FAST2017-draft.tex
+(./FAST2017-draft.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (./usenix.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/mathptmx.sty
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/endnotes/endnotes.sty
+\c@endnote=\count88
+\endnotesep=\dimen107
+\@enotes=\write3
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip43
+\subfigcapskip=\skip44
+\subfigcaptopadj=\dimen108
+\subfigbottomskip=\skip45
+\subfigcapmargin=\dimen109
+\subfiglabelskip=\skip46
+\c@subfigure=\count89
+\c@lofdepth=\count90
+\c@subtable=\count91
+\c@lotdepth=\count92
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip47
+\subfig@bottom=\skip48
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/preprint/balance.sty
+Package: balance 1999/02/23 4.3 (PWD)
+\oldvsize=\dimen110
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count93
+\c@ALG@rem=\count94
+\c@ALG@nested=\count95
+\ALG@tlm=\skip49
+\ALG@thistlm=\skip50
+\c@ALG@Lnr=\count96
+\c@ALG@blocknr=\count97
+\c@ALG@storecount=\count98
+\c@ALG@tmpcounter=\count99
+\ALG@tmplength=\skip51
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+\@float@every@algorithm=\toks17
+\c@algorithm=\count101
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf.sty
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write4
+
+Excluding comment 'comment')
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen111
+)
+(./FAST2017-draft.aux)
+\openout1 = `FAST2017-draft.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 37.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+\big@size=\dimen112
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen113
+\scratchbox=\box28
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen114
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks19
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 64
+.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 64
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 64
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 64
+.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 64.
+ (./intro.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 25.
+
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+])
+(./design.tex [2]
+Package epstopdf Info: Source file: <figures/architecture.eps>
+(epstopdf)                    date: 2017-01-24 00:27:09
+(epstopdf)                    size: 1553607 bytes
+(epstopdf)             Output file: <figures/architecture-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2017-01-24 00:27:10
+(epstopdf)                    size: 21870 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/architecture-eps-c
+onverted-to.pdf figures/architecture.eps>
+(epstopdf)             \includegraphics on input line 34.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/architecture-eps-converted-to.pdf, id=12, 568.1225pt x 451.6875pt>
+File: figures/architecture-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/architecture-eps-converted-to.pdf>
+Package pdftex.def Info: figures/architecture-eps-converted-to.pdf used on inpu
+t line 34.
+(pdftex.def)             Requested size: 227.24496pt x 180.67178pt.
+
+Overfull \hbox (1.40121pt too wide) in paragraph at lines 34--35
+ [][] 
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+
+Overfull \hbox (1.1244pt too wide) in paragraph at lines 52--52
+[]\OT1/ptm/m/n/10 Notation| 
+ []
+
+
+Overfull \hbox (1.41425pt too wide) in paragraph at lines 50--75
+ [][] 
+ []
+
+[3 <./figures/architecture-eps-converted-to.pdf>]
+Underfull \hbox (badness 1867) in paragraph at lines 118--119
+\OT1/ptm/m/n/10 We im-ple-mented Earn-Cache by im-plant-ing our in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+\OT1/ptm/m/n/10 cre-men-tal caching mech-a-nism into the mod-i-fied
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 137.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 137.
+) (./exp.tex
+[4]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 10.
+Package epstopdf Info: Source file: <figures/scan444_time_all.eps>
+(epstopdf)                    date: 2017-01-24 21:38:42
+(epstopdf)                    size: 29005 bytes
+(epstopdf)             Output file: <figures/scan444_time_all-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 21:38:08
+(epstopdf)                    size: 7480 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/scan444_time_all-e
+ps-converted-to.pdf figures/scan444_time_all.eps>
+(epstopdf)             \includegraphics on input line 28.
+runsystem(repstopdf --outfile=figures/scan444_time_all-eps-converted-to.pdf fig
+ures/scan444_time_all.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figures/scan444_time_all-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 21:38:59
+(epstopdf)                    size: 7480 bytes.
+
+<figures/scan444_time_all-eps-converted-to.pdf, id=27, 307.1475pt x 252.945pt>
+File: figures/scan444_time_all-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/scan444_time_all-eps-converted-to.pdf>
+Package pdftex.def Info: figures/scan444_time_all-eps-converted-to.pdf used on 
+input line 28.
+(pdftex.def)             Requested size: 107.50323pt x 88.53207pt.
+
+Overfull \hbox (10.39209pt too wide) in paragraph at lines 28--28
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figures/scan741_time_all.eps>
+(epstopdf)                    date: 2017-01-24 21:38:42
+(epstopdf)                    size: 29250 bytes
+(epstopdf)             Output file: <figures/scan741_time_all-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 21:38:09
+(epstopdf)                    size: 7570 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/scan741_time_all-e
+ps-converted-to.pdf figures/scan741_time_all.eps>
+(epstopdf)             \includegraphics on input line 35.
+runsystem(repstopdf --outfile=figures/scan741_time_all-eps-converted-to.pdf fig
+ures/scan741_time_all.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figures/scan741_time_all-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 21:39:00
+(epstopdf)                    size: 7570 bytes.
+
+<figures/scan741_time_all-eps-converted-to.pdf, id=28, 307.1475pt x 252.945pt>
+File: figures/scan741_time_all-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/scan741_time_all-eps-converted-to.pdf>
+Package pdftex.def Info: figures/scan741_time_all-eps-converted-to.pdf used on 
+input line 35.
+(pdftex.def)             Requested size: 107.50323pt x 88.53207pt.
+
+Overfull \hbox (10.39209pt too wide) in paragraph at lines 35--35
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figures/block_count_avg.eps>
+(epstopdf)                    date: 2017-01-24 00:27:10
+(epstopdf)                    size: 25924 bytes
+(epstopdf)             Output file: <figures/block_count_avg-eps-converted-to.p
+df>
+(epstopdf)                    date: 2017-01-24 00:27:10
+(epstopdf)                    size: 8478 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/block_count_avg-ep
+s-converted-to.pdf figures/block_count_avg.eps>
+(epstopdf)             \includegraphics on input line 44.
+Package epstopdf Info: Output file is already uptodate.
+<figures/block_count_avg-eps-converted-to.pdf, id=29, 542.025pt x 303.1325pt>
+File: figures/block_count_avg-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/block_count_avg-eps-converted-to.pdf>
+Package pdftex.def Info: figures/block_count_avg-eps-converted-to.pdf used on i
+nput line 44.
+(pdftex.def)             Requested size: 216.80615pt x 121.25084pt.
+Package epstopdf Info: Source file: <figures/3-2-earn-1000-ds.eps>
+(epstopdf)                    date: 2017-01-24 21:25:48
+(epstopdf)                    size: 24065 bytes
+(epstopdf)             Output file: <figures/3-2-earn-1000-ds-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 21:34:11
+(epstopdf)                    size: 7903 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/3-2-earn-1000-ds-e
+ps-converted-to.pdf figures/3-2-earn-1000-ds.eps>
+(epstopdf)             \includegraphics on input line 79.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/3-2-earn-1000-ds-eps-converted-to.pdf, id=30, 289.08pt x 252.945pt>
+File: figures/3-2-earn-1000-ds-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/3-2-earn-1000-ds-eps-converted-to.pdf>
+Package pdftex.def Info: figures/3-2-earn-1000-ds-eps-converted-to.pdf used on 
+input line 79.
+(pdftex.def)             Requested size: 118.52356pt x 103.70811pt.
+
+Overfull \hbox (12.37672pt too wide) in paragraph at lines 79--79
+ [][] 
+ []
+
+Package epstopdf Info: Source file: <figures/3-2-maxmin-1000-ds.eps>
+(epstopdf)                    date: 2017-01-24 21:25:48
+(epstopdf)                    size: 24040 bytes
+(epstopdf)             Output file: <figures/3-2-maxmin-1000-ds-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2017-01-24 21:34:12
+(epstopdf)                    size: 7831 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/3-2-maxmin-1000-ds
+-eps-converted-to.pdf figures/3-2-maxmin-1000-ds.eps>
+(epstopdf)             \includegraphics on input line 86.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/3-2-maxmin-1000-ds-eps-converted-to.pdf, id=31, 289.08pt x 252.945pt>
+File: figures/3-2-maxmin-1000-ds-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/3-2-maxmin-1000-ds-eps-converted-to.pdf>
+Package pdftex.def Info: figures/3-2-maxmin-1000-ds-eps-converted-to.pdf used o
+n input line 86.
+(pdftex.def)             Requested size: 118.52356pt x 103.70811pt.
+
+Overfull \hbox (12.37672pt too wide) in paragraph at lines 86--86
+ [][] 
+ []
+
+[5 <./figures/scan444_time_all-eps-converted-to.pdf> <./figures/scan741_time_al
+l-eps-converted-to.pdf> <./figures/block_count_avg-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/window_size_time.eps>
+(epstopdf)                    date: 2017-01-24 00:27:09
+(epstopdf)                    size: 18554 bytes
+(epstopdf)             Output file: <figures/window_size_time-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2017-01-24 00:27:10
+(epstopdf)                    size: 8850 bytes
+(epstopdf)             Command: <repstopdf --outfile=figures/window_size_time-e
+ps-converted-to.pdf figures/window_size_time.eps>
+(epstopdf)             \includegraphics on input line 97.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/window_size_time-eps-converted-to.pdf, id=50, 361.35pt x 252.945pt>
+File: figures/window_size_time-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/window_size_time-eps-converted-to.pdf>
+Package pdftex.def Info: figures/window_size_time-eps-converted-to.pdf used on 
+input line 97.
+(pdftex.def)             Requested size: 148.15445pt x 103.70811pt.
+) (./related.tex) [6 <./figures/3-2-earn-1000-ds-eps-converted-to.pdf> <./figur
+es/3-2-maxmin-1000-ds-eps-converted-to.pdf> <./figures/window_size_time-eps-con
+verted-to.pdf>]
+Underfull \hbox (badness 1132) in paragraph at lines 130--132
+[]\OT1/ptm/m/n/10 S. Zhang, J. Han, Z. Liu, et al. Ac-cel-er-at-ing
+ []
+
+
+Underfull \hbox (badness 5050) in paragraph at lines 140--141
+[]\OT1/ptm/m/n/10 Z. Cao, W. Ze-gura. Util-ity Max-Min: An
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+\OT1/ptm/m/n/10 Application-Oriented Band-width Al-lo-ca-tion
+ []
+
+
+Underfull \hbox (badness 2150) in paragraph at lines 140--141
+\OT1/ptm/m/n/10 Scheme. In Pro-ceed-ings of IN-FO-COM, 1999,
+ []
+
+[7] (./FAST2017-draft.aux) ) 
+Here is how much of TeX's memory you used:
+ 2810 strings out of 493089
+ 41977 string characters out of 6134842
+ 108219 words of memory out of 5000000
+ 6187 multiletter control sequences out of 15000+600000
+ 38128 words of font info for 77 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,12n,26p,1018b,302s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips
+/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/local/t
+exlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on FAST2017-draft.pdf (7 pages, 151673 bytes).
+PDF statistics:
+ 101 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+

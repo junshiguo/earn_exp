@@ -1,9 +1,9 @@
 %!PS-Adobe-2.0 EPSF-2.0
 %%Title: ../figures/scan741_time_all.eps
-%%Creator: gnuplot 4.6 patchlevel 4
-%%CreationDate: Sun Sep 25 14:55:25 2016
+%%Creator: gnuplot 5.0 patchlevel 0
+%%CreationDate: Tue Jan 24 21:38:42 2017
 %%DocumentFonts: (atend)
-%%BoundingBox: 50 50 338 302
+%%BoundingBox: 50 50 356 302
 %%EndComments
 %%BeginProlog
 /gnudict 256 dict def
@@ -14,10 +14,11 @@ gnudict begin
 %
 /Color true def
 /Blacktext false def
-/Solid true def
+/Solid false def
 /Dashlength 1 def
 /Landscape false def
 /Level1 false def
+/Level3 false def
 /Rounded false def
 /ClipToBoundingBox false def
 /SuppressPDFMark false def
@@ -27,13 +28,13 @@ gnudict begin
 /Gamma 1.0 def
 /BackgroundColor {-1.000 -1.000 -1.000} def
 %
-/vshift -80 def
+/vshift -86 def
 /dl1 {
-  10.0 Dashlength mul mul
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
   Rounded { currentlinewidth 0.75 mul sub dup 0 le { pop 0.01 } if } if
 } def
 /dl2 {
-  10.0 Dashlength mul mul
+  10.0 Dashlength userlinewidth gnulinewidth div mul mul mul
   Rounded { currentlinewidth 0.75 mul add } if
 } def
 /hpt_ 31.5 def
@@ -42,12 +43,12 @@ gnudict begin
 /vpt vpt_ def
 /doclip {
   ClipToBoundingBox {
-    newpath 50 50 moveto 338 50 lineto 338 302 lineto 50 302 lineto closepath
+    newpath 50 50 moveto 356 50 lineto 356 302 lineto 50 302 lineto closepath
     clip
   } if
 } def
 %
-% Gnuplot Prolog Version 4.6 (September 2012)
+% Gnuplot Prolog Version 5.0 (Dec 2014)
 %
 %/SuppressPDFMark true def
 %
@@ -64,11 +65,11 @@ gnudict begin
 /vpt2 vpt 2 mul def
 /hpt2 hpt 2 mul def
 /Lshow {currentpoint stroke M 0 vshift R 
-	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
 /Rshow {currentpoint stroke M dup stringwidth pop neg vshift R
-	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
 /Cshow {currentpoint stroke M dup stringwidth pop -2 div vshift R 
-	Blacktext {gsave 0 setgray show grestore} {show} ifelse} def
+	Blacktext {gsave 0 setgray textshow grestore} {textshow} ifelse} def
 /UP {dup vpt_ mul /vpt exch def hpt_ mul /hpt exch def
   /hpt2 hpt 2 mul def /vpt2 vpt 2 mul def} def
 /DL {Color {setrgbcolor Solid {pop []} if 0 setdash}
@@ -82,7 +83,7 @@ gnudict begin
 /PL {stroke userlinewidth setlinewidth
 	Rounded {1 setlinejoin 1 setlinecap} if} def
 3.8 setmiterlimit
-% Default Line colors
+% Classic Line colors (version 5.0)
 /LCw {1 1 1} def
 /LCb {0 0 0} def
 /LCa {0 0 0} def
@@ -95,19 +96,20 @@ gnudict begin
 /LC6 {0 0 0} def
 /LC7 {1 0.3 0} def
 /LC8 {0.5 0.5 0.5} def
-% Default Line Types
+% Default dash patterns (version 5.0)
 /LTw {PL [] 1 setgray} def
 /LTb {BL [] LCb DL} def
 /LTa {AL [1 udl mul 2 udl mul] 0 setdash LCa setrgbcolor} def
 /LT0 {PL [] LC0 DL} def
-/LT1 {PL [4 dl1 2 dl2] LC1 DL} def
-/LT2 {PL [2 dl1 3 dl2] LC2 DL} def
-/LT3 {PL [1 dl1 1.5 dl2] LC3 DL} def
-/LT4 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
-/LT5 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC5 DL} def
-/LT6 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC6 DL} def
-/LT7 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC7 DL} def
-/LT8 {PL [2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 2 dl2 2 dl1 4 dl2] LC8 DL} def
+/LT1 {PL [2 dl1 3 dl2] LC1 DL} def
+/LT2 {PL [1 dl1 1.5 dl2] LC2 DL} def
+/LT3 {PL [6 dl1 2 dl2 1 dl1 2 dl2] LC3 DL} def
+/LT4 {PL [1 dl1 2 dl2 6 dl1 2 dl2 1 dl1 2 dl2] LC4 DL} def
+/LT5 {PL [4 dl1 2 dl2] LC5 DL} def
+/LT6 {PL [1.5 dl1 1.5 dl2 1.5 dl1 1.5 dl2 1.5 dl1 6 dl2] LC6 DL} def
+/LT7 {PL [3 dl1 3 dl2 1 dl1 3 dl2] LC7 DL} def
+/LT8 {PL [2 dl1 2 dl2 2 dl1 6 dl2] LC8 DL} def
+/SL {[] 0 setdash} def
 /Pnt {stroke [] 0 setdash gsave 1 setlinecap M 0 0 V stroke grestore} def
 /Dia {stroke [] 0 setdash 2 copy vpt add M
   hpt neg vpt neg V hpt vpt neg V
@@ -329,9 +331,14 @@ gnudict begin
 %
 /languagelevel where
  {pop languagelevel} {1} ifelse
- 2 lt
-	{/InterpretLevel1 true def}
-	{/InterpretLevel1 Level1 def}
+dup 2 lt
+	{/InterpretLevel1 true def
+	 /InterpretLevel3 false def}
+	{/InterpretLevel1 Level1 def
+	 2 gt
+	    {/InterpretLevel3 Level3 def}
+	    {/InterpretLevel3 false def}
+	 ifelse }
  ifelse
 %
 % PostScript level 2 pattern fill definitions
@@ -420,6 +427,35 @@ Level1 {Level1PatternFill} {Level2PatternFill} ifelse
 /Symbol-Oblique /Symbol findfont [1 0 .167 1 0 0] makefont
 dup length dict begin {1 index /FID eq {pop pop} {def} ifelse} forall
 currentdict end definefont pop
+%
+/MFshow {
+   { dup 5 get 3 ge
+     { 5 get 3 eq {gsave} {grestore} ifelse }
+     {dup dup 0 get findfont exch 1 get scalefont setfont
+     [ currentpoint ] exch dup 2 get 0 exch R dup 5 get 2 ne {dup dup 6
+     get exch 4 get {textshow} {stringwidth pop 0 R} ifelse }if dup 5 get 0 eq
+     {dup 3 get {2 get neg 0 exch R pop} {pop aload pop M} ifelse} {dup 5
+     get 1 eq {dup 2 get exch dup 3 get exch 6 get stringwidth pop -2 div
+     dup 0 R} {dup 6 get stringwidth pop -2 div 0 R 6 get
+     textshow 2 index {aload pop M neg 3 -1 roll neg R pop pop} {pop pop pop
+     pop aload pop M} ifelse }ifelse }ifelse }
+     ifelse }
+   forall} def
+/Gswidth {dup type /stringtype eq {stringwidth} {pop (n) stringwidth} ifelse} def
+/MFwidth {0 exch { dup 5 get 3 ge { 5 get 3 eq { 0 } { pop } ifelse }
+ {dup 3 get{dup dup 0 get findfont exch 1 get scalefont setfont
+     6 get Gswidth pop add} {pop} ifelse} ifelse} forall} def
+/MLshow { currentpoint stroke M
+  0 exch R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MRshow { currentpoint stroke M
+  exch dup MFwidth neg 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/MCshow { currentpoint stroke M
+  exch dup MFwidth -2 div 3 -1 roll R
+  Blacktext {gsave 0 setgray MFshow grestore} {MFshow} ifelse } bind def
+/XYsave    { [( ) 1 2 true false 3 ()] } bind def
+/XYrestore { [( ) 1 2 true false 4 ()] } bind def
 Level1 SuppressPDFMark or 
 {} {
 /SDict 10 dict def
@@ -429,15 +465,40 @@ systemdict /pdfmark known not {
 SDict begin [
   /Title (../figures/scan741_time_all.eps)
   /Subject (gnuplot plot)
-  /Creator (gnuplot 4.6 patchlevel 4)
+  /Creator (gnuplot 5.0 patchlevel 0)
   /Author (guojunshi)
 %  /Producer (gnuplot)
 %  /Keywords ()
-  /CreationDate (Sun Sep 25 14:55:25 2016)
+  /CreationDate (Tue Jan 24 21:38:42 2017)
   /DOCINFO pdfmark
 end
 } ifelse
 end
+%
+% Support for boxed text - Ethan A Merritt May 2005
+%
+/InitTextBox { userdict /TBy2 3 -1 roll put userdict /TBx2 3 -1 roll put
+           userdict /TBy1 3 -1 roll put userdict /TBx1 3 -1 roll put
+	   /Boxing true def } def
+/ExtendTextBox { Boxing
+    { gsave dup false charpath pathbbox
+      dup TBy2 gt {userdict /TBy2 3 -1 roll put} {pop} ifelse
+      dup TBx2 gt {userdict /TBx2 3 -1 roll put} {pop} ifelse
+      dup TBy1 lt {userdict /TBy1 3 -1 roll put} {pop} ifelse
+      dup TBx1 lt {userdict /TBx1 3 -1 roll put} {pop} ifelse
+      grestore } if } def
+/PopTextBox { newpath TBx1 TBxmargin sub TBy1 TBymargin sub M
+               TBx1 TBxmargin sub TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy2 TBymargin add L
+	       TBx2 TBxmargin add TBy1 TBymargin sub L closepath } def
+/DrawTextBox { PopTextBox stroke /Boxing false def} def
+/FillTextBox { gsave PopTextBox 1 1 1 setrgbcolor fill grestore /Boxing false def} def
+0 0 0 0 InitTextBox
+/TBxmargin 20 def
+/TBymargin 20 def
+/Boxing false def
+/textshow { ExtendTextBox Gshow } def
+%
 %%EndProlog
 %%Page: 1 1
 gnudict begin
@@ -447,765 +508,798 @@ doclip
 0.050 0.050 scale
 0 setgray
 newpath
-(Times_New_Roman) findfont 240 scalefont setfont
-BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 5760.00 5040.00 BoxColFill} if
+(Times_New_Roman) findfont 260 scalefont setfont
+BackgroundColor 0 lt 3 1 roll 0 lt exch 0 lt or or not {BackgroundColor C 1.000 0 0 6120.00 5040.00 BoxColFill} if
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-960 1200 M
-4367 0 V
+1040 1300 M
+4611 0 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-960 1200 M
+1040 1300 M
 63 0 V
-4304 0 R
+4548 0 R
 -63 0 V
--4448 0 R
-( 0) Rshow
-1.000 UL
-LTb
-LCb setrgbcolor
-1.000 UL
-LTa
-LCa setrgbcolor
-960 1693 M
-4367 0 V
 stroke
-LTb
-LCb setrgbcolor
-960 1693 M
-63 0 V
-4304 0 R
--63 0 V
--4448 0 R
-( 100) Rshow
+884 1300 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 0)]
+] -86.7 MRshow
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-960 2186 M
-4367 0 V
+1040 1769 M
+4611 0 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-960 2186 M
+1040 1769 M
 63 0 V
-4304 0 R
+4548 0 R
 -63 0 V
--4448 0 R
-( 200) Rshow
-1.000 UL
-LTb
-LCb setrgbcolor
-1.000 UL
-LTa
-LCa setrgbcolor
-960 2680 M
-4367 0 V
 stroke
-LTb
-LCb setrgbcolor
-960 2680 M
-63 0 V
-4304 0 R
--63 0 V
--4448 0 R
-( 300) Rshow
+884 1769 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 100)]
+] -86.7 MRshow
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-960 3173 M
-4367 0 V
+1040 2239 M
+4611 0 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-960 3173 M
+1040 2239 M
 63 0 V
-4304 0 R
+4548 0 R
 -63 0 V
--4448 0 R
-( 400) Rshow
-1.000 UL
-LTb
-LCb setrgbcolor
-1.000 UL
-LTa
-LCa setrgbcolor
-960 3666 M
-4367 0 V
 stroke
-LTb
-LCb setrgbcolor
-960 3666 M
-63 0 V
-4304 0 R
--63 0 V
--4448 0 R
-( 500) Rshow
+884 2239 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 200)]
+] -86.7 MRshow
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-960 4159 M
-4367 0 V
+1040 2708 M
+4611 0 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-960 4159 M
+1040 2708 M
 63 0 V
-4304 0 R
+4548 0 R
 -63 0 V
--4448 0 R
-( 600) Rshow
-1.000 UL
-LTb
-LCb setrgbcolor
-1.000 UL
-LTa
-LCa setrgbcolor
-960 4652 M
-144 0 V
-2718 0 R
-1505 0 V
 stroke
-LTb
-LCb setrgbcolor
-960 4652 M
-63 0 V
-4304 0 R
--63 0 V
--4448 0 R
-( 700) Rshow
+884 2708 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 300)]
+] -86.7 MRshow
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-1251 1200 M
-0 3008 V
-0 480 R
+1040 3178 M
+4611 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1040 3178 M
+63 0 V
+4548 0 R
+-63 0 V
+stroke
+884 3178 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 400)]
+] -86.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1040 3647 M
+4611 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1040 3647 M
+63 0 V
+4548 0 R
+-63 0 V
+stroke
+884 3647 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 500)]
+] -86.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1040 4117 M
+4611 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1040 4117 M
+63 0 V
+4548 0 R
+-63 0 V
+stroke
+884 4117 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 600)]
+] -86.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1040 4586 M
+156 0 V
+2934 0 R
+1521 0 V
+stroke
+1.000 UL
+LTb
+LCb setrgbcolor
+1040 4586 M
+63 0 V
+4548 0 R
+-63 0 V
+stroke
+884 4586 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 ( 700)]
+] -86.7 MRshow
+1.000 UL
+LTb
+LCb setrgbcolor
+0.500 UL
+LTa
+LCa setrgbcolor
+1347 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-1251 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(EARN) Lshow
+1347 1300 M
+stroke
+1347 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (EARN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-1542 1200 M
-0 3008 V
-0 480 R
+1655 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-1542 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(MAX-MIN) Lshow
+1655 1300 M
+stroke
+1655 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (MAX-MIN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-1833 1200 M
-0 3008 V
-0 480 R
+1962 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-1833 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LRU) Lshow
+1962 1300 M
+stroke
+1962 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LRU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-2125 1200 M
-0 3008 V
-0 480 R
+2270 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-2125 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LFU) Lshow
+2270 1300 M
+stroke
+2270 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LFU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-2707 1200 M
-0 3008 V
-0 480 R
+2884 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-2707 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(EARN) Lshow
+2884 1300 M
+stroke
+2884 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (EARN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-2998 1200 M
-0 3008 V
-0 480 R
+3192 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-2998 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(MAX-MIN) Lshow
+3192 1300 M
+stroke
+3192 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (MAX-MIN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-3289 1200 M
-0 3008 V
-0 480 R
+3499 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-3289 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LRU) Lshow
+3499 1300 M
+stroke
+3499 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LRU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-3580 1200 M
-0 3008 V
-0 480 R
+3807 1300 M
+0 2844 V
+0 520 R
 0 63 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-3580 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LFU) Lshow
+3807 1300 M
+stroke
+3807 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LFU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-4162 1200 M
-0 3551 V
+4421 1300 M
+0 3427 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-4162 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(EARN) Lshow
+4421 1300 M
+stroke
+4421 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (EARN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-4454 1200 M
-0 3551 V
+4729 1300 M
+0 3427 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-4454 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(MAX-MIN) Lshow
+4729 1300 M
+stroke
+4729 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (MAX-MIN)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-4745 1200 M
-0 3551 V
+5036 1300 M
+0 3427 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-4745 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LRU) Lshow
+5036 1300 M
+stroke
+5036 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LRU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
-1.000 UL
+0.500 UL
 LTa
 LCa setrgbcolor
-5036 1200 M
-0 3551 V
+5344 1300 M
+0 3427 V
 stroke
+1.000 UL
 LTb
 LCb setrgbcolor
-5036 1200 M
-/Times_New_Roman findfont 200 scalefont setfont
-/vshift -66 def
-0 -144 R
-currentpoint gsave translate -45 rotate 0 0 M
-(LFU) Lshow
+5344 1300 M
+stroke
+5344 1144 M
+currentpoint gsave translate -45 rotate 0 0 moveto
+[ [(Times_New_Roman) 240.0 0.0 true true 0 (LFU)]
+] -80.0 MLshow
 grestore
-/Times_New_Roman findfont 240 scalefont setfont
-/vshift -80 def
 1.000 UL
 LTb
 LCb setrgbcolor
 1.000 UL
 LTb
 LCb setrgbcolor
-960 4751 N
-0 -3551 V
-4367 0 V
-0 3551 V
--4367 0 V
+1040 4727 N
+0 -3427 V
+4611 0 V
+0 3427 V
+-4611 0 V
 Z stroke
-LCb setrgbcolor
-192 2975 M
-currentpoint gsave translate -270 rotate 0 0 M
-(TIME\(s\)) Cshow
-grestore
-LTb
 1.000 UP
 1.000 UL
 LTb
 LCb setrgbcolor
+LCb setrgbcolor
+208 3013 M
+currentpoint gsave translate -270 rotate 0 0 moveto
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (TIME\(s\))]
+] -86.7 MCshow
+grestore
+LTb
 % Begin plot #1
 1.000 UL
-LT0
+LTb
 0.24 0.70 0.44 C LCb setrgbcolor
-1968 4568 M
-(FILE-1) Rshow
-LT0
-0.24 0.70 0.44 C 1.000 2112 4508 207 120 BoxColFill
-2112 4508 N
-207 0 V
-0 120 V
--207 0 V
-0 -120 V
+2663 4534 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (FILE-1)]
+] -86.7 MRshow
+1.000 UL
+LTb
+0.24 0.70 0.44 C 1.000 1352 4469 219 130 BoxColFill
+1352 4469 N
+219 0 V
+0 130 V
+-219 0 V
+0 -130 V
 Z stroke
-LT0
-0.24 0.70 0.44 C 1.000 1135 1200 234 710 BoxColFill
-1135 1200 N
-0 709 V
-233 0 V
-0 -709 V
--233 0 V
+1.000 UL
+LTb
+0.24 0.70 0.44 C 1.000 1224 1300 247 676 BoxColFill
+1224 1300 N
+0 675 V
+246 0 V
+0 -675 V
+-246 0 V
 Z stroke
-1.000 1426 1200 234 798 BoxColFill
-1426 1200 N
-0 797 V
-233 0 V
-0 -797 V
--233 0 V
+1.000 1532 1300 247 760 BoxColFill
+1532 1300 N
+0 759 V
+246 0 V
+0 -759 V
+-246 0 V
 Z stroke
-1.000 1717 1200 234 976 BoxColFill
-1717 1200 N
-0 975 V
-233 0 V
-0 -975 V
--233 0 V
+1.000 1839 1300 247 929 BoxColFill
+1839 1300 N
+0 928 V
+246 0 V
+0 -928 V
+-246 0 V
 Z stroke
-1.000 2008 1200 234 813 BoxColFill
-2008 1200 N
-0 812 V
-233 0 V
-0 -812 V
--233 0 V
+1.000 2147 1300 247 774 BoxColFill
+2147 1300 N
+0 773 V
+246 0 V
+0 -773 V
+-246 0 V
 Z stroke
 % End plot #1
 % Begin plot #2
 1.000 UL
-LT1
-0.58 0.44 0.86 C 1.000 1135 1909 234 391 BoxColFill
-1135 1909 N
-0 390 V
-233 0 V
-0 -390 V
--233 0 V
+LTb
+0.58 0.44 0.86 C 1.000 1224 1975 247 373 BoxColFill
+1224 1975 N
+0 372 V
+246 0 V
+0 -372 V
+-246 0 V
 Z stroke
-1.000 1426 1997 234 433 BoxColFill
-1426 1997 N
-0 432 V
-233 0 V
-0 -432 V
--233 0 V
+1.000 1532 2059 247 412 BoxColFill
+1532 2059 N
+0 411 V
+246 0 V
+0 -411 V
+-246 0 V
 Z stroke
-1.000 1717 2175 234 565 BoxColFill
-1717 2175 N
-0 564 V
-233 0 V
-0 -564 V
--233 0 V
+1.000 1839 2228 247 538 BoxColFill
+1839 2228 N
+0 537 V
+246 0 V
+0 -537 V
+-246 0 V
 Z stroke
-1.000 2008 2012 234 495 BoxColFill
-2008 2012 N
-0 494 V
-233 0 V
-0 -494 V
--233 0 V
+1.000 2147 2073 247 471 BoxColFill
+2147 2073 N
+0 470 V
+246 0 V
+0 -470 V
+-246 0 V
 Z stroke
 % End plot #2
 % Begin plot #3
 1.000 UL
-LT2
-0.80 0.52 0.25 C 1.000 1135 2299 234 111 BoxColFill
-1135 2299 N
-0 110 V
-233 0 V
-0 -110 V
--233 0 V
+LTb
+0.80 0.52 0.25 C 1.000 1224 2347 247 105 BoxColFill
+1224 2347 N
+0 104 V
+246 0 V
+0 -104 V
+-246 0 V
 Z stroke
-1.000 1426 2429 234 158 BoxColFill
-1426 2429 N
-0 157 V
-233 0 V
-0 -157 V
--233 0 V
+1.000 1532 2470 247 150 BoxColFill
+1532 2470 N
+0 149 V
+246 0 V
+0 -149 V
+-246 0 V
 Z stroke
-1.000 1717 2739 234 176 BoxColFill
-1717 2739 N
-0 175 V
-233 0 V
-0 -175 V
--233 0 V
+1.000 1839 2765 247 167 BoxColFill
+1839 2765 N
+0 166 V
+246 0 V
+0 -166 V
+-246 0 V
 Z stroke
-1.000 2008 2506 234 170 BoxColFill
-2008 2506 N
-0 169 V
-233 0 V
-0 -169 V
--233 0 V
+1.000 2147 2543 247 162 BoxColFill
+2147 2543 N
+0 161 V
+246 0 V
+0 -161 V
+-246 0 V
 Z stroke
 % End plot #3
 % Begin plot #4
 1.000 UL
-LT3
-0.24 0.70 0.44 C 1.000 2590 1200 234 1360 BoxColFill
-2590 1200 N
-0 1359 V
-233 0 V
-0 -1359 V
--233 0 V
+LTb
+0.24 0.70 0.44 C 1.000 2761 1300 247 1294 BoxColFill
+2761 1300 N
+0 1293 V
+246 0 V
+0 -1293 V
+-246 0 V
 Z stroke
-1.000 2881 1200 234 1529 BoxColFill
-2881 1200 N
-0 1528 V
-233 0 V
-0 -1528 V
--233 0 V
+1.000 3069 1300 247 1455 BoxColFill
+3069 1300 N
+0 1454 V
+246 0 V
+0 -1454 V
+-246 0 V
 Z stroke
-1.000 3173 1200 234 1880 BoxColFill
-3173 1200 N
-0 1879 V
-233 0 V
-0 -1879 V
--233 0 V
+1.000 3376 1300 247 1790 BoxColFill
+3376 1300 N
+0 1789 V
+246 0 V
+0 -1789 V
+-246 0 V
 Z stroke
-1.000 3464 1200 234 1525 BoxColFill
-3464 1200 N
-0 1524 V
-233 0 V
-0 -1524 V
--233 0 V
+1.000 3684 1300 247 1451 BoxColFill
+3684 1300 N
+0 1450 V
+246 0 V
+0 -1450 V
+-246 0 V
 Z stroke
 % End plot #4
 % Begin plot #5
 1.000 UL
-LT4
+LTb
 0.58 0.44 0.86 C LCb setrgbcolor
-3327 4568 M
-(FILE-2) Rshow
-LT4
-0.58 0.44 0.86 C 1.000 3471 4508 207 120 BoxColFill
-3471 4508 N
-207 0 V
-0 120 V
--207 0 V
-0 -120 V
+4130 4534 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (FILE-2)]
+] -86.7 MRshow
+1.000 UL
+LTb
+0.58 0.44 0.86 C 1.000 2819 4469 219 130 BoxColFill
+2819 4469 N
+219 0 V
+0 130 V
+-219 0 V
+0 -130 V
 Z stroke
-LT4
-0.58 0.44 0.86 C 1.000 2590 2559 234 406 BoxColFill
-2590 2559 N
-0 405 V
-233 0 V
-0 -405 V
--233 0 V
+1.000 UL
+LTb
+0.58 0.44 0.86 C 1.000 2761 2593 247 388 BoxColFill
+2761 2593 N
+0 387 V
+246 0 V
+0 -387 V
+-246 0 V
 Z stroke
-1.000 2881 2728 234 423 BoxColFill
-2881 2728 N
-0 422 V
-233 0 V
-0 -422 V
--233 0 V
+1.000 3069 2754 247 403 BoxColFill
+3069 2754 N
+0 402 V
+246 0 V
+0 -402 V
+-246 0 V
 Z stroke
-1.000 3173 3079 234 562 BoxColFill
-3173 3079 N
-0 561 V
-233 0 V
-0 -561 V
--233 0 V
+1.000 3376 3089 247 534 BoxColFill
+3376 3089 N
+0 533 V
+246 0 V
+0 -533 V
+-246 0 V
 Z stroke
-1.000 3464 2724 234 538 BoxColFill
-3464 2724 N
-0 537 V
-233 0 V
-0 -537 V
--233 0 V
+1.000 3684 2750 247 512 BoxColFill
+3684 2750 N
+0 511 V
+246 0 V
+0 -511 V
+-246 0 V
 Z stroke
 % End plot #5
 % Begin plot #6
 1.000 UL
-LT5
-0.80 0.52 0.25 C 1.000 2590 2964 234 106 BoxColFill
-2590 2964 N
-0 105 V
-233 0 V
-0 -105 V
--233 0 V
+LTb
+0.80 0.52 0.25 C 1.000 2761 2980 247 100 BoxColFill
+2761 2980 N
+0 99 V
+246 0 V
+0 -99 V
+-246 0 V
 Z stroke
-1.000 2881 3150 234 115 BoxColFill
-2881 3150 N
-0 114 V
-233 0 V
-0 -114 V
--233 0 V
+1.000 3069 3156 247 110 BoxColFill
+3069 3156 N
+0 109 V
+246 0 V
+0 -109 V
+-246 0 V
 Z stroke
-1.000 3173 3640 234 170 BoxColFill
-3173 3640 N
-0 169 V
-233 0 V
-0 -169 V
--233 0 V
+1.000 3376 3622 247 162 BoxColFill
+3376 3622 N
+0 161 V
+246 0 V
+0 -161 V
+-246 0 V
 Z stroke
-1.000 3464 3261 234 169 BoxColFill
-3464 3261 N
-0 168 V
-233 0 V
-0 -168 V
--233 0 V
+1.000 3684 3261 247 162 BoxColFill
+3684 3261 N
+0 161 V
+246 0 V
+0 -161 V
+-246 0 V
 Z stroke
 % End plot #6
 % Begin plot #7
 1.000 UL
-LT6
-0.24 0.70 0.44 C 1.000 4046 1200 234 1482 BoxColFill
-4046 1200 N
-0 1481 V
-233 0 V
-0 -1481 V
--233 0 V
+LTb
+0.24 0.70 0.44 C 1.000 4298 1300 247 1411 BoxColFill
+4298 1300 N
+0 1410 V
+246 0 V
+0 -1410 V
+-246 0 V
 Z stroke
-1.000 4337 1200 234 1526 BoxColFill
-4337 1200 N
-0 1525 V
-233 0 V
-0 -1525 V
--233 0 V
+1.000 4606 1300 247 1452 BoxColFill
+4606 1300 N
+0 1451 V
+246 0 V
+0 -1451 V
+-246 0 V
 Z stroke
-1.000 4628 1200 234 1973 BoxColFill
-4628 1200 N
-0 1972 V
-233 0 V
-0 -1972 V
--233 0 V
+1.000 4913 1300 247 1878 BoxColFill
+4913 1300 N
+0 1877 V
+246 0 V
+0 -1877 V
+-246 0 V
 Z stroke
-1.000 4919 1200 234 1624 BoxColFill
-4919 1200 N
-0 1623 V
-233 0 V
-0 -1623 V
--233 0 V
+1.000 5221 1300 247 1546 BoxColFill
+5221 1300 N
+0 1545 V
+246 0 V
+0 -1545 V
+-246 0 V
 Z stroke
 % End plot #7
 % Begin plot #8
 1.000 UL
-LT7
-0.58 0.44 0.86 C 1.000 4046 2681 234 826 BoxColFill
-4046 2681 N
-0 825 V
-233 0 V
-0 -825 V
--233 0 V
+LTb
+0.58 0.44 0.86 C 1.000 4298 2710 247 786 BoxColFill
+4298 2710 N
+0 785 V
+246 0 V
+0 -785 V
+-246 0 V
 Z stroke
-1.000 4337 2725 234 807 BoxColFill
-4337 2725 N
-0 806 V
-233 0 V
-0 -806 V
--233 0 V
+1.000 4606 2751 247 769 BoxColFill
+4606 2751 N
+0 768 V
+246 0 V
+0 -768 V
+-246 0 V
 Z stroke
-1.000 4628 3172 234 1133 BoxColFill
-4628 3172 N
-0 1132 V
-233 0 V
-0 -1132 V
--233 0 V
+1.000 4913 3177 247 1079 BoxColFill
+4913 3177 N
+0 1078 V
+246 0 V
+0 -1078 V
+-246 0 V
 Z stroke
-1.000 4919 2823 234 908 BoxColFill
-4919 2823 N
-0 907 V
-233 0 V
-0 -907 V
--233 0 V
+1.000 5221 2845 247 864 BoxColFill
+5221 2845 N
+0 863 V
+246 0 V
+0 -863 V
+-246 0 V
 Z stroke
 % End plot #8
 % Begin plot #9
 1.000 UL
-LT8
+LTb
 0.80 0.52 0.25 C LCb setrgbcolor
-4686 4568 M
-(FILE-3) Rshow
-LT8
-0.80 0.52 0.25 C 1.000 4830 4508 207 120 BoxColFill
-4830 4508 N
-207 0 V
-0 120 V
--207 0 V
-0 -120 V
+5597 4534 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (FILE-3)]
+] -86.7 MRshow
+1.000 UL
+LTb
+0.80 0.52 0.25 C 1.000 4286 4469 219 130 BoxColFill
+4286 4469 N
+219 0 V
+0 130 V
+-219 0 V
+0 -130 V
 Z stroke
-LT8
-0.80 0.52 0.25 C 1.000 4046 3506 234 115 BoxColFill
-4046 3506 N
-0 114 V
-233 0 V
-0 -114 V
--233 0 V
+1.000 UL
+LTb
+0.80 0.52 0.25 C 1.000 4298 3495 247 110 BoxColFill
+4298 3495 N
+0 109 V
+246 0 V
+0 -109 V
+-246 0 V
 Z stroke
-1.000 4337 3531 234 99 BoxColFill
-4337 3531 N
-0 98 V
-233 0 V
-0 -98 V
--233 0 V
+1.000 4606 3519 247 94 BoxColFill
+4606 3519 N
+0 93 V
+246 0 V
+0 -93 V
+-246 0 V
 Z stroke
-1.000 4628 4304 234 172 BoxColFill
-4628 4304 N
-0 171 V
-233 0 V
-0 -171 V
--233 0 V
+1.000 4913 4255 247 164 BoxColFill
+4913 4255 N
+0 163 V
+246 0 V
+0 -163 V
+-246 0 V
 Z stroke
-1.000 4919 3730 234 170 BoxColFill
-4919 3730 N
-0 169 V
-233 0 V
-0 -169 V
--233 0 V
+1.000 5221 3708 247 162 BoxColFill
+5221 3708 N
+0 161 V
+246 0 V
+0 -161 V
+-246 0 V
 Z stroke
 % End plot #9
+2.000 UL
+LTb
+LCb setrgbcolor
 1.000 UL
 LTb
 LCb setrgbcolor
-960 4751 N
-0 -3551 V
-4367 0 V
-0 3551 V
--4367 0 V
+1040 4727 N
+0 -3427 V
+4611 0 V
+0 3427 V
+-4611 0 V
 Z stroke
 1.000 UP
+LCb setrgbcolor
+4883 125 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (TWO)]
+] -86.7 MCshow
 LTb
-4599 116 M
-(TWO) Cshow
-3144 116 M
-(ONE) Cshow
-1688 116 M
-(ROUND) Cshow
+LCb setrgbcolor
+3346 125 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (ONE)]
+] -86.7 MCshow
+LTb
+LCb setrgbcolor
+1809 125 M
+[ [(Times_New_Roman) 260.0 0.0 true true 0 (ROUND)]
+] -86.7 MCshow
+LTb
 1.000 UL
 LTb
 LCb setrgbcolor
